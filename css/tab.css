@@ -1,0 +1,56 @@
+ul{
+	padding: 0;
+	margin: 0;
+}
+
+ul li{
+	list-style: none;	
+}
+
+body{
+	font-size: 16px;
+	margin: 0;
+}
+
+*{
+	-webkit-box-sizing: border-box;
+  	   -moz-box-sizing: border-box;
+  			box-sizing: border-box;
+}
+
+.hidden{
+	display: none;
+}
+
+.tab{
+	width: 100%
+}
+
+.tab-title{
+	background: #f7f7f9;
+	height: 50px;
+	line-height: 50px;
+	margin-bottom: 5px;
+	width: 100%;
+}
+
+.tab-title li{
+	text-align: center;
+	float: left;
+	width: 33.33333%;
+	border-bottom: 1px solid #eee;
+}
+
+.tab-title li.select{
+	background: #fff;
+	border-bottom: 0;
+}
+
+.tab-content .tab-mod{
+	text-align: center;
+}
+
+.tab-mod li{
+	height: 40px;
+	line-height: 40px;
+}

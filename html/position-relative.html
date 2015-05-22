@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>position-test</title>
+    <style type="text/css">
+        .test {
+            width: 25em;
+            margin: 2em auto;
+        }
+
+        .box {
+            padding: 2em;
+            border: 1px solid #beceeb;
+            border-radius: 2px;
+            background-color: #f0f3f9;
+            position: relative;
+        }
+
+        .rel {
+            position: relative;
+        }
+
+        .ok {
+            color: green;
+            font-size: 6em;
+            position: absolute;
+            right: -11px;
+            bottom: -.5em;
+        }
+    </style>
+</head>
+<body>
+<div class="test">
+    <div class="box">
+        CSS relative相对定位的最小化影响原则
+        <strong class="ok">√</strong>
+    </div>
+</div>
+
+<div class="test">
+    <div class="box">CSS relative相对定位的最小化影响原则</div>
+    <div class="rel"><strong class="ok">√</strong></div>
+</div>
+
+</body>
+</html>
