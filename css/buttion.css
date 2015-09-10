@@ -1,0 +1,183 @@
+body{
+    background: #333;
+}
+
+.box{
+    width: 800px;
+    height: 280px;
+    margin: 50px auto;
+    position: relative;
+}
+
+.box .link{
+    width: 205px;
+    height: 280px;
+    float: left;
+    margin:0 20px;
+}
+
+.link .icon{
+    display: inline-block;
+    width: 100%;
+    height: 190px;
+    -webkit-transition: 0.2s ease-out;
+    -moz-transition: 0.2s ease-out;
+    -o-transition: 0.2s ease-out;
+    transition: 0.2s ease-out;
+}
+
+.link-miss .icon{
+    background: url("../images/mission.png") no-repeat center center;
+}
+
+.link-play .icon{
+    background: url("../images/play.png") no-repeat center center;
+}
+
+.link-touch .icon{
+    background: url("../images/touch.png") no-repeat center center;
+}
+
+.link .icon:hover{
+    -webkit-transform: rotate(360deg) scale(1.2);
+    -moz-transform: rotate(360deg) scale(1.2);
+    -ms-transform: rotate(360deg) scale(1.2);
+    -o-transform: rotate(360deg) scale(1.2);
+    transform: rotate(360deg) scale(1.2);
+}
+
+.button{
+    width: 180px;
+    height: 50px;
+    color: #2DCB70;
+    margin: 0 auto;
+    display: block;
+    line-height: 50px;
+    position: relative;
+    padding-left: 20px;
+    font-family: Airal;
+    font-weight: bolder;
+    text-decoration: none;
+    border: 2px solid rgba(255,255,255,0.1);
+    background: url("../images/allow.png") no-repeat 130px center;
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+
+    -webkit-transition: 0.4s ease;
+    -moz-transition: 0.4s ease;
+    -o-transition: 0.4s ease;
+    transition: 0.4s ease;
+}
+
+.button:hover{
+    /*border: 2px solid rgba(255,255,255,1);*/
+    background-position: 140px center;
+
+}
+
+.button .line{
+    display: block;
+    background: none;
+    position: absolute;
+
+    -webkit-transition: 0.4s ease;
+    -moz-transition: 0.4s ease;
+    -o-transition: 0.4s ease;
+    transition: 0.4s ease;
+}
+
+.button:hover .line{
+    background: #fff;
+}
+
+.button .line-top{
+    width: 0;
+    top: -2px;
+    left: -110%;
+    height: 2px;
+
+
+}
+
+.button:hover .line-top{
+    width: 180.2px;
+    left: -2px;
+}
+
+.button .line-right{
+    width: 2px;
+    top: -110%;
+    right: -2px;
+    height: 0;
+
+
+}
+
+.button:hover .line-right{
+    height: 50.2px;
+    top: -2px;
+}
+
+.button .line-bottom{
+    height: 2px;
+    top: 48px;
+    right: -110%;
+    width: 0;
+
+}
+
+.button:hover .line-bottom{
+    width: 180.2px;
+    right: -2px;
+}
+
+.button .line-left{
+    width: 2px;
+    bottom: -110%;
+    left: -2px;
+    height: 0;
+
+
+}
+
+.button:hover .line-left{
+    height: 50.2px;
+    bottom: -2px;
+}
+
+.box .tip {
+    position: absolute;
+    padding: 0px 14px;
+    height: 35px;
+    line-height: 35px;
+    background: #2DCB70;
+    color: #fff;
+    top: 100px;
+    font-size: 16px;
+    font-weight: normal;
+    text-transform: none;
+    margin: 0 auto;
+    opacity: 0;
+    border-radius: 3px
+}
+
+.tip em {
+    font-style: normal;
+}
+
+.tip span {
+    position: absolute;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    border: 7px solid transparent;
+    border-top-color: #2DCB70;
+    left: 50%;
+    margin-left: -3px;
+    bottom: -14px;
+}
+
+
