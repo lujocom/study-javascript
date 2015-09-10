@@ -2,11 +2,11 @@ KISSY.add('kissy-3-01', function (S, require, exprots, module) {
     var Node = require('node'),
         $    = Node.all;
     var $test = $('#J_test');
-    $test.length && $('#J_result').text("Ñ¡ÔñÆ÷ÃüÖĞ½ÚµãÊıÎª£º" + $test.length);
+    $test.length && $('#J_result').text("é€‰æ‹©å™¨å‘½ä¸­èŠ‚ç‚¹æ•°ä¸ºï¼š" + $test.length);
     var id = $test[0].id;
-    $("#J_id").text("Ñ¡ÖĞ½ÚµãidÎª£º" + id);
+    $("#J_id").text("é€‰ä¸­èŠ‚ç‚¹idä¸ºï¼š" + id);
     var $one = Node.one("#J_one");
-    $one.text("Node.one()ÓÃÓÚ»ñÈ¡Ò»¸ö½Úµã");
+    $one.text("Node.one()ç”¨äºè·å–ä¸€ä¸ªèŠ‚ç‚¹");
 
     var test = function () {
         console.log("test");

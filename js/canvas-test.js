@@ -7,20 +7,20 @@ KISSY.add('canvas-hello', function (S, require, exprots, module) {
 
     if(context){
         context.beginPath();
-        context.moveTo(100, 100);//»­±Ê¿ªÊ¼µØµã
-        context.lineTo(700, 700);//½áÊøµã
-        context.lineTo(100, 700);//½áÊøµã
-        context.lineTo(100, 100);//½áÊøµã
+        context.moveTo(100, 100);//ç”»ç¬”å¼€å§‹åœ°ç‚¹
+        context.lineTo(700, 700);//ç»“æŸç‚¹
+        context.lineTo(100, 700);//ç»“æŸç‚¹
+        context.lineTo(100, 100);//ç»“æŸç‚¹
         context.closePath();
         /*
-        //Ìî³ä
-        context.fillStyle = '#99CC99';//Ìî³äÑùÊ½
-        context.fill();//Ìî³ä
+        //å¡«å……
+        context.fillStyle = '#99CC99';//å¡«å……æ ·å¼
+        context.fill();//å¡«å……
         */
-        //»­ÏßÌõ
-        context.lineWidth = 5;//ÏßÌõ¿í¶È
-        context.strokeStyle = "#99CC99";//ÏßÌõÑùÊ½
-        context.stroke();//»æÖÆ
+        //ç”»çº¿æ¡
+        context.lineWidth = 5;//çº¿æ¡å®½åº¦
+        context.strokeStyle = "#99CC99";//çº¿æ¡æ ·å¼
+        context.stroke();//ç»˜åˆ¶
 
         context.beginPath();
         context.moveTo(200, 100);
@@ -31,7 +31,7 @@ KISSY.add('canvas-hello', function (S, require, exprots, module) {
         context.stroke();
 
     }else{
-        alert("¸Ãä¯ÀÀÆ÷²»Ö§³Öcanvas£¬Çë¸ü»»ä¯ÀÀÆ÷ÔÙÊÔÒ»´Î..")
+        alert("è¯¥æµè§ˆå™¨ä¸æ”¯æŒcanvasï¼Œè¯·æ›´æ¢æµè§ˆå™¨å†è¯•ä¸€æ¬¡..")
     }
 
 });

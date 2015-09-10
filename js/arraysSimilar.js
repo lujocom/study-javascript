@@ -2,7 +2,7 @@
  * Created by LujoCom on 2015/5/7.
  */
 var result = function () {
-    //ÒÔÏÂÎª¶à×é²âÊÔÊı¾İ
+    //ä»¥ä¸‹ä¸ºå¤šç»„æµ‹è¯•æ•°æ®
     var cases = [{
         arr1: [1, true, null],
         arr2: [null, false, 100],
@@ -49,14 +49,14 @@ var result = function () {
         expect: false
     }];
 
-    //Ê¹ÓÃforÑ­»·, Í¨¹ıarraysSimilarº¯ÊıÑéÖ¤ÒÔÉÏÊı¾İÊÇ·ñÏàËÆ£¬
-    // ÈçÏàËÆÏÔÊ¾¡°Í¨¹ı¡±,·ñÔò"²»Í¨¹ı",ËùÒÔ´ó¼ÒÒªÍê³ÉarraysSimilarº¯Êı,¾ßÌåÒªÇó£¬Ïê¼ûÈÎÎñÒªÇó¡£
+    //ä½¿ç”¨forå¾ªç¯, é€šè¿‡arraysSimilarå‡½æ•°éªŒè¯ä»¥ä¸Šæ•°æ®æ˜¯å¦ç›¸ä¼¼ï¼Œ
+    // å¦‚ç›¸ä¼¼æ˜¾ç¤ºâ€œé€šè¿‡â€,å¦åˆ™"ä¸é€šè¿‡",æ‰€ä»¥å¤§å®¶è¦å®ŒæˆarraysSimilarå‡½æ•°,å…·ä½“è¦æ±‚ï¼Œè¯¦è§ä»»åŠ¡è¦æ±‚ã€‚
     for (var i = 0; i < cases.length; i++) {
         if (arraysSimilar(cases[i].arr1, cases[i].arr2) !== cases[i].expect) {
-            document.write("²»Í¨¹ı£¡case" + (i + 1)
-                + "²»ÕıÈ·£¡arr1=" + JSON.stringify(cases[i].arr1)
+            document.write("ä¸é€šè¿‡ï¼case" + (i + 1)
+                + "ä¸æ­£ç¡®ï¼arr1=" + JSON.stringify(cases[i].arr1)
                 + ", arr2=" + JSON.stringify(cases[i].arr2)
-                + " µÄÅĞ¶Ï½á¹û²»ÊÇ" + cases[i].expect);
+                + " çš„åˆ¤æ–­ç»“æœä¸æ˜¯" + cases[i].expect);
             return false;
         }
     }
@@ -68,20 +68,20 @@ var result = function () {
 function arraysSimilar(arr1, arr2){
     if (arr1 instanceof Array && arr2 instanceof Array) {
         var key1 = [], key2 = [], len = arr1.length, len2 = arr2.length;
-        // Êı×éµÄ³¤¶ÈÏàµÈÅĞ¶Ï
+        // æ•°ç»„çš„é•¿åº¦ç›¸ç­‰åˆ¤æ–­
         if (len != len2) {
             return false;
         }
-        // ÀàĞÍÏàÍ¬ÅĞ¶Ï
+        // ç±»å‹ç›¸åŒåˆ¤æ–­
         if (len) {
-            // »ñÈ¡ÀàĞÍÁĞ±í
+            // è·å–ç±»å‹åˆ—è¡¨
             for (var i = 0; i < len; i++) {
-                // Êı×é1µÄÀàĞÍÁĞ±í×Ö´®
+                // æ•°ç»„1çš„ç±»å‹åˆ—è¡¨å­—ä¸²
                 var item1 = arr1[i], typeFirst = typeOf(item1);
                 if (key1.join().indexOf(typeFirst) < 0) {
                     key1.push(typeFirst);
                 }
-                // Êı×é2µÄÀàĞÍÁĞ±í×Ö´®
+                // æ•°ç»„2çš„ç±»å‹åˆ—è¡¨å­—ä¸²
                 var item2 = arr2[i], typeSecond = typeOf(item2);
                 if (key2.join().indexOf(typeSecond) < 0) {
                     key2.push(typeSecond);
@@ -89,32 +89,32 @@ function arraysSimilar(arr1, arr2){
             }
             key1 = key1.sort().join(",");
             key2 = key2.sort().join(",");
-            // ÀàĞÍ×Ö´®±È½Ï
+            // ç±»å‹å­—ä¸²æ¯”è¾ƒ
             if (key1 == key2) {
                 return true;
             } else {
                 return false;
             }
         } else {
-            // ¿ÕÊı×éÏàµÈ
+            // ç©ºæ•°ç»„ç›¸ç­‰
             return true;
         }
     } else {
-        // ·ÇÊı×é
+        // éæ•°ç»„
         return false;
     }
 
 }
 
 /**
- * ÀàĞÍÅĞ¶Ï·½·¨
+ * ç±»å‹åˆ¤æ–­æ–¹æ³•
  * param item
  * return type(string,function,boolean,number,undefined,null,window,Date,Array,object)
  */
 function typeOf(item) {
     var type = typeof item;
     if (type != "object") {
-        // ÅĞ¶Ï»ù±¾ÀàĞÍstring,function,boolean,number,undefine
+        // åˆ¤æ–­åŸºæœ¬ç±»å‹string,function,boolean,number,undefine
     } else if (item === null) {
         // check null
         type = "null";
@@ -122,7 +122,7 @@ function typeOf(item) {
         // check window
         type = "window";
     } else {
-        // ÅĞ¶ÏobjectÀàĞÍobject,date,array
+        // åˆ¤æ–­objectç±»å‹object,date,array
         if (item instanceof Date) {
             type = "date";
         } else if (item instanceof Array) {
@@ -158,4 +158,4 @@ var testFor = function () {
 
 }();
 
-document.write("ÅĞ¶¨½á¹û:" + (result ? "Í¨¹ı" : "²»Í¨¹ı"));
+document.write("åˆ¤å®šç»“æœ:" + (result ? "é€šè¿‡" : "ä¸é€šè¿‡"));

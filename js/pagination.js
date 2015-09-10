@@ -1,7 +1,7 @@
 var Pagination = function (option) {
 
     if(typeof option.pageSize !== 'number' || typeof option.total !== 'number'){
-        console.log("未传入pageSize或者total");
+        console.log("鏈紶鍏ageSize鎴栬�卼otal");
         return ;
     }
 

@@ -5,7 +5,7 @@ KISSY.add('canvas-canvas', function ($, require, exprots, module) {
 
     context.lineWidth = 5;
     context.strokeStyle="#FF6600";
-    //Ô²µÄx×ø±ê¡¢y×ø±ê¡¢°ë¾¶¡¢ÆğÊ¼Î»ÖÃ¡¢½áÊøÎ»ÖÃ¡¢Ë³Ê±Õë»¹ÊÇÄæÊ±Õë(¿ÉÑ¡²ÎÊı)
+    //åœ†çš„xåæ ‡ã€yåæ ‡ã€åŠå¾„ã€èµ·å§‹ä½ç½®ã€ç»“æŸä½ç½®ã€é¡ºæ—¶é’ˆè¿˜æ˜¯é€†æ—¶é’ˆ(å¯é€‰å‚æ•°)
     context.arc(300, 300, 100, 0, 1.5 * Math.PI);
     context.stroke();
 
