@@ -1,0 +1,163 @@
+@import "mixin";
+
+@font-face {
+    font-family: 'icomoon';
+    src: url('../fonts/icomoon.eot?3ftmtz');
+    src: url('../fonts/icomoon.eot?3ftmtz#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?3ftmtz') format('truetype'),
+    url('../fonts/icomoon.woff?3ftmtz') format('woff'),
+    url('../fonts/icomoon.svg?3ftmtz#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.icon {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+$toolbar-size: 52px;
+$toolbar-position-right: 50%;
+
+.toolbar {
+    position: fixed;
+    left: $toolbar-position-right;
+    bottom: 5px;
+    margin-left: -$toolbar-size / 2;
+}
+
+.toolbar-item {
+    position: relative;
+    display: block;
+    width: $toolbar-size;
+    height: $toolbar-size;
+    margin-top: 1px;
+    &:hover {
+        .toolbar-btn {
+            &:before {
+                top: -$toolbar-size;
+            }
+            &:after {
+                top: 0;
+            }
+        }
+        &:after {
+            @include opacity(1);
+            @include transform(scale(1));
+        }
+    }
+    &:after {
+        content: "";
+        position: absolute;
+        right: $toolbar-size - 6;
+        bottom: -10px;
+        width: 172px;
+        background: url("../images/toolbar_img.png") no-repeat;
+        @include opacity(0);
+        @include transformOrigin(95% 95%);
+        @include transform(scale(0.01));
+        @include transition(all 1s);
+    }
+}
+
+.toolbar-item-weixin {
+    .toolbar-btn {
+        &:before {
+            content: "\e902";
+        }
+        &:after {
+            content: "公众\A账号";
+        }
+    }
+
+    &:after {
+        content: "";
+        height: 212px;
+        background-position: 0 0;
+    }
+}
+
+.toolbar-item-feedback {
+    .toolbar-btn {
+        &:before {
+            content: "\e900";
+        }
+        &:after {
+            content: "意见\A反馈";
+        }
+    }
+}
+
+.toolbar-item-download {
+    .toolbar-btn {
+        &:before {
+            content: "\e903";
+        }
+        &:after {
+            content: "APP\A下载";
+        }
+    }
+
+    &:after {
+        content: "";
+        height: 194px;
+        background-position: 0 -222px;
+    }
+}
+
+.toolbar-item-top {
+    .toolbar-btn {
+        &:before {
+            content: "\e901";
+        }
+        &:after {
+            content: "返回\A顶部";
+        }
+    }
+}
+
+.toolbar-btn {
+    top: 0;
+    overflow: hidden;
+    @extend .icon;
+    &, &:before, &:after {
+        position: absolute;
+        left: 0;
+        width: $toolbar-size;
+        height: $toolbar-size;
+    }
+
+    &:before, &:after {
+        content: "";
+        color: #fff;
+        text-align: center;
+        @include transition(top 1s);
+    }
+
+    &:before {
+        //icon
+        top: 0;
+        background-color: #d0d6d9;
+        font-size: 30px;
+        line-height: $toolbar-size;
+    }
+    &:after {
+        //text
+        top: $toolbar-size;
+        background-color: #98a1a6;
+        font-size: 12px;
+        padding-top: 12px;
+        line-height: 1.2;
+        white-space: pre;
+    }
+}
