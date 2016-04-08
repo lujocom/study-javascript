@@ -1,0 +1,184 @@
+* {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+body {
+    font-size: 18px;
+    background: #F6F6F6;
+    margin: 0;
+    padding: 0;
+    font-family: "微软雅黑", "宋体", Arial;
+}
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, th, td {
+    padding: 0;
+    margin: 0;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%
+}
+a{
+    -webkit-tap-highlight-color:transparent;
+}
+
+.clear:after {
+    content: '';
+    clear: both;
+    display: block;
+    overflow: hidden;
+}
+
+.header {
+    height: 50px;
+    text-align: center;
+    padding: 15px 3% 15px 3%;
+    line-height: 20px;
+    color: white;
+}
+
+.color1 {
+    background: #00B89C;
+}
+
+.fcolor1 {
+    color: #00B89C;
+}
+
+/*图标样式*/
+.backicon {
+    background: url(../images/backLeft.png) center center;
+    background-size: 100% 100%;
+    height: 20px;
+    width: 20px;
+    left: 10px;
+    position: absolute;
+}
+
+.wmhome {
+    background: url(../images/mw-home.png) center center;
+    background-size: 100% 100%;
+    height: 26px;
+    width: 26px;
+    float: right;
+    right: 10px;
+    top: 12px;
+    position: absolute;
+}
+
+.choose-sure {
+    width: 90px;
+    float: right;
+    right: 1px;
+    top: 15px;
+    position: absolute;
+    color: #F0FAF8;
+}
+
+.choose-container{
+    background-color: #F6F6F6;
+}
+
+.choose-remind{
+    text-align: center;
+    font-size: 15px;
+    color: #fff;
+    line-height: 50px;
+    background-color: #43c9d1;
+}
+
+.remind{
+    width: 24px;
+    height: 24px;
+    background: url(../images/remind.png) no-repeat;
+    background-size: 100%;
+    display: inline-block;
+    position: relative;
+    top: 6px;
+}
+
+.coupon-tab{
+    padding: 5px 10px;
+    color: #9D9D9D;
+    font-size: 14px;
+}
+
+.coupon-list{
+    border-top: 1px solid #c8c8c8;
+    border-bottom: 1px solid #c8c8c8;
+    background: #fff;
+    padding-left: 10px;
+}
+
+.coupon-item{
+    width: 100%;
+    padding: 10px 0 10px;
+    border-bottom: 1px solid #E6E6E6;
+    position: relative;
+}
+
+.coupon-img{
+    float: left;
+    width: 70px;
+    height: 70px;
+    overflow: hidden;
+    position: relative;
+}
+
+.coupon-img img{
+    position: absolute;
+    height: 70px;
+    width: 104.918032786885px;
+    left: -17.4590163934426px;
+}
+
+.coupon-content{
+    padding-left: 80px;
+}
+
+.coupon-title{
+    font-size: 16px;
+    color: #1F1F1F;
+    padding-right: 30px;
+    height: 44px;
+}
+
+.coupon-detail{
+    font-size: 14px;
+    color: #D02E44;
+    margin-top: 9px;
+    height: 17px;
+}
+
+.coupon-choose{
+    position: absolute;
+    width: 50px;
+    height: 91px;
+    right: 6px;
+    top: 0;
+    text-align: right;
+}
+
+.choose-ok{
+    background: url(../images/select_yes.png) no-repeat;
+    width: 25px;
+    height: 25px;
+    background-size: 100%;
+    display: inline-block;
+    margin-top: 33px;
+
+}
+
+.choose-no{
+    background: url(../images/select_no.png) no-repeat;
+    width: 25px;
+    height: 25px;
+    background-size: 100%;
+    display: inline-block;
+    margin-top: 33px;
+}

@@ -1,0 +1,453 @@
+
+
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no" />
+    <title>我要点餐</title>
+    <link href="css/OrderMenuCssnew2.css" rel="stylesheet" />
+    <link href="css/photoswipe.css" rel="stylesheet" />
+    <link href="css/mobiscroll.android-ics-2.6.2.css" rel="stylesheet" />
+    <link href="css/mobiscroll.animation-2.6.2.css" rel="stylesheet" />
+    <link href="css/mobiscroll.core-2.6.2.css" rel="stylesheet" />
+    <script src="Js/jquery-1.9.1.min.js"></script>
+    <script src="../js/iscroll-lite.js"></script>
+    <script src="jquery.confirm/klass.min.js"></script>
+    <script src="js/mobiscroll.custom-2.6.2.min.js"></script>
+    <script src="http://a.tbcdn.cn/s/kissy/1.3.0/kissy-min.js" charset="utf-8"></script>
+</head>
+<body onload="loaded()">
+<div id="header"><div id='scrollobj'><span style='margin-left: 100px;'></span><span class='wmsp' style='font-size: 13px;'><img src='systemimg/listdc.png' class='buguantp'>满1元赠鸡蛋</span><span style='margin-left: 100px;'></span><span class='wmsp' style='font-size: 13px;'><img src='systemimg/listdc.png' class='buguantp'>在线支付打9.5折</span></div></div>
+<div id='wrapper'><div id='scroller'><ul><li onclick="ShowSortNameByDishesList('2')" id='BigLi2' class='bigliCls' data-ctp='0' >特色小吃<span class='countCls'>(7)</span><div class='redRound' id='RedRo2'>0</div></li><li onclick="ShowSortNameByDishesList('3')" id='BigLi3'  data-ctp='0' >主食系列<span class='countCls'>(2)</span><div class='redRound' id='RedRo3'>0</div></li><li onclick="ShowSortNameByDishesList('4')" id='BigLi4'  data-ctp='0' >套餐<span class='countCls'>(3)</span><div class='redRound' id='RedRo4'>0</div></li><li onclick="ShowSortNameByDishesList('5')" id='BigLi5'  data-ctp='0' >酒水<span class='countCls'>(10)</span><div class='redRound' id='RedRo5'>0</div></li></ul></div></div><div id='wrapperDishes' class='wrapperDishes'><div id='RightScroller'><ul id='DishesByList2' ><li id='ll1602531' class='jl' title='0' data-index='0'><div class='dc'><span id='DNm1602531' class='DishesNm'>羊肉串</span><span class='PrcWord'>￥3</span><span class='bl'>/例</span></div> <div class='imgdivCs' ><a href='uploadFiles/UpDishesImg/22457/1445939335545.jpg'><img src='Images/grey.gif' class='foodImgClass' alt='羊肉串(￥3)' data-ks-lazyload='uploadFiles/UpDishesImg/22457/1445939335596.jpg'  data-id='1602531' data-idx='0' data-Sorid='2' /></a><span id='Sale1602531' class='flagsp'>已售1422份</span></div><div id='div1602531' class='hh1' data-price='3'><div id='RecommendchooseDiv1602531' class='choosDiv tradiv'><img src='Images/Actitycm/circleImg.png' id='backImg1602531' class='addAndReduceBackImg1'><div id='Recommenddisplay1602531' data-oldnum='0' class='displayCountDiv'>0</div></div><div id='bargainRightDiv1602531' title='2' class='rightAddDiv' onclick="appendfood(2,1602531,3,'2')"><img src='Images/add.png' class='addAndReduce'></div><div id='RecommendleftDiv1602531' class='leftDivaa' onclick="reducefood(2,1602531,3,'2')"><img src='Images/reduce.png' class='addAndReduceCls'><span id='Sw1602531' class='1'></span></div></div><div class='mgt5'></div><div class='mg5'></div></li><li id='ll1602533' class='jl' title='0' data-index='1'><div class='dc'><span id='DNm1602533' class='DishesNm'>精品凉菜</span><span class='PrcWord'>￥5</span><span class='bl'>/例</span></div> <div class='imgdivCs' ><a href='uploadFiles/UpDishesImg/22457/1445938424359.jpg'><img src='Images/grey.gif' class='foodImgClass' alt='精品凉菜(￥5)' data-ks-lazyload='uploadFiles/UpDishesImg/22457/1445938424407.jpg'  data-id='1602533' data-idx='1' data-Sorid='2' /></a><span id='Sale1602533' class='flagsp'>已售653份</span></div><div id='div1602533' class='hh1' data-price='5'><div id='RecommendchooseDiv1602533' class='choosDiv tradiv'><img src='Images/Actitycm/circleImg.png' id='backImg1602533' class='addAndReduceBackImg1'><div id='Recommenddisplay1602533' data-oldnum='0' class='displayCountDiv'>0</div></div><div id='bargainRightDiv1602533' title='2' class='rightAddDiv' onclick="appendfood(2,1602533,5,'2')"><img src='Images/add.png' class='addAndReduce'></div><div id='RecommendleftDiv1602533' class='leftDivaa' onclick="reducefood(2,1602533,5,'2')"><img src='Images/reduce.png' class='addAndReduceCls'><span id='Sw1602533' class='1'></span></div></div><div class='mgt5'></div><div class='mg5'></div></li><li id='ll1628244' class='jl' title='0' data-index='2'><div class='dc'><span id='DNm1628244' class='DishesNm'>烤馕</span><span class='PrcWord'>￥5</span><span class='bl'>/例</span></div> <div class='imgdivCs' ><a href='uploadFiles/UpDishesImg/22457/1450522389047.jpg'><img src='Images/grey.gif' class='foodImgClass' alt='烤馕(￥5)' data-ks-lazyload='uploadFiles/UpDishesImg/22457/1450522389087.jpg'  data-id='1628244' data-idx='2' data-Sorid='2' /></a><span id='Sale1628244' class='flagsp'>已售344份</span></div><div id='div1628244' class='hh1' data-price='5'><div id='RecommendchooseDiv1628244' class='choosDiv tradiv'><img src='Images/Actitycm/circleImg.png' id='backImg1628244' class='addAndReduceBackImg1'><div id='Recommenddisplay1628244' data-oldnum='0' class='displayCountDiv'>0</div></div><div id='bargainRightDiv1628244' title='2' class='rightAddDiv' onclick="appendfood(2,1628244,5,'2')"><img src='Images/add.png' class='addAndReduce'></div><div id='RecommendleftDiv1628244' class='leftDivaa' onclick="reducefood(2,1628244,5,'2')"><img src='Images/reduce.png' class='addAndReduceCls'><span id='Sw1628244' class='1'></span></div></div><div class='mgt5'></div><div class='mg5'></div></li><li id='ll1602532' class='jl' title='0' data-index='3'><div class='dc'><span id='DNm1602532' class='DishesNm'>秘制牛肉</span><span class='PrcWord'>￥10</span><span class='bl'>/例</span></div> <div class='imgdivCs' ><a href='uploadFiles/UpDishesImg/22457/1445937831512.jpg'><img src='Images/grey.gif' class='foodImgClass' alt='秘制牛肉(￥10)' data-ks-lazyload='uploadFiles/UpDishesImg/22457/1445937831562.jpg'  data-id='1602532' data-idx='3' data-Sorid='2' /></a><span id='Sale1602532' class='flagsp'>已售291份</span></div><div id='div1602532' class='hh1' data-price='10'><div id='RecommendchooseDiv1602532' class='choosDiv tradiv'><img src='Images/Actitycm/circleImg.png' id='backImg1602532' class='addAndReduceBackImg1'><div id='Recommenddisplay1602532' data-oldnum='0' class='displayCountDiv'>0</div></div><div id='bargainRightDiv1602532' title='2' class='rightAddDiv' onclick="appendfood(2,1602532,10,'2')"><img src='Images/add.png' class='addAndReduce'></div><div id='RecommendleftDiv1602532' class='leftDivaa' onclick="reducefood(2,1602532,10,'2')"><img src='Images/reduce.png' class='addAndReduceCls'><span id='Sw1602532' class='1'></span></div></div><div class='mgt5'></div><div class='mg5'></div></li><li id='ll1602534' class='jl' title='0' data-index='4'><div class='dc'><span id='DNm1602534' class='DishesNm'>秘制酸奶</span><span class='PrcWord'>￥8</span><span class='bl'>/例</span></div> <div class='imgdivCs' ><a href='uploadFiles/UpDishesImg/22457/1445937929248.jpg'><img src='Images/grey.gif' class='foodImgClass' alt='秘制酸奶(￥8)' data-ks-lazyload='uploadFiles/UpDishesImg/22457/1445937929295.jpg'  data-id='1602534' data-idx='4' data-Sorid='2' /></a><span id='Sale1602534' class='flagsp'>已售157份</span></div><div id='div1602534' class='hh1' data-price='8'><div id='RecommendchooseDiv1602534' class='choosDiv tradiv'><img src='Images/Actitycm/circleImg.png' id='backImg1602534' class='addAndReduceBackImg1'><div id='Recommenddisplay1602534' data-oldnum='0' class='displayCountDiv'>0</div></div><div id='bargainRightDiv1602534' title='2' class='rightAddDiv' onclick="appendfood(2,1602534,8,'2')"><img src='Images/add.png' class='addAndReduce'></div><div id='RecommendleftDiv1602534' class='leftDivaa' onclick="reducefood(2,1602534,8,'2')"><img src='Images/reduce.png' class='addAndReduceCls'><span id='Sw1602534' class='1'></span></div></div><div class='mgt5'></div><div class='mg5'></div></li><li id='ll1628243' class='jl' title='0' data-index='5'><div class='dc'><span id='DNm1628243' class='DishesNm'>椒麻鸡</span><span class='PrcWord'>￥15</span><span class='bl'>/例</span></div> <div class='imgdivCs' ><a href='uploadFiles/UpDishesImg/22457/1450522274998.jpg'><img src='Images/grey.gif' class='foodImgClass' alt='椒麻鸡(￥15)' data-ks-lazyload='uploadFiles/UpDishesImg/22457/1450522275037.jpg'  data-id='1628243' data-idx='5' data-Sorid='2' /></a><span id='Sale1628243' class='flagsp'>已售151份</span></div><div id='div1628243' class='hh1' data-price='15'><div id='RecommendchooseDiv1628243' class='choosDiv tradiv'><img src='Images/Actitycm/circleImg.png' id='backImg1628243' class='addAndReduceBackImg1'><div id='Recommenddisplay1628243' data-oldnum='0' class='displayCountDiv'>0</div></div><div id='bargainRightDiv1628243' title='2' class='rightAddDiv' onclick="appendfood(2,1628243,15,'2')"><img src='Images/add.png' class='addAndReduce'></div><div id='RecommendleftDiv1628243' class='leftDivaa' onclick="reducefood(2,1628243,15,'2')"><img src='Images/reduce.png' class='addAndReduceCls'><span id='Sw1628243' class='1'></span></div></div><div class='mgt5'></div><div class='mg5'></div></li><li id='ll1602535' class='jl' title='0' data-index='6'><div class='dc'><span id='DNm1602535' class='DishesNm'>鸡蛋</span><span class='PrcWord'>￥2</span><span class='bl'>/例</span></div> <div class='imgdivCs' ><a href='uploadFiles/UpDishesImg/22457/1445937980238.jpg'><img src='Images/grey.gif' class='foodImgClass' alt='鸡蛋(￥2)' data-ks-lazyload='uploadFiles/UpDishesImg/22457/1445937980287.jpg'  data-id='1602535' data-idx='6' data-Sorid='2' /></a><span id='Sale1602535' class='flagsp'>已售57份</span></div><div id='div1602535' class='hh1' data-price='2'><div id='RecommendchooseDiv1602535' class='choosDiv tradiv'><img src='Images/Actitycm/circleImg.png' id='backImg1602535' class='addAndReduceBackImg1'><div id='Recommenddisplay1602535' data-oldnum='0' class='displayCountDiv'>0</div></div><div id='bargainRightDiv1602535' title='2' class='rightAddDiv' onclick="appendfood(2,1602535,2,'2')"><img src='Images/add.png' class='addAndReduce'></div><div id='RecommendleftDiv1602535' class='leftDivaa' onclick="reducefood(2,1602535,2,'2')"><img src='Images/reduce.png' class='addAndReduceCls'><span id='Sw1602535' class='1'></span></div></div><div class='mgt5'></div><div class='mg5'></div></li></ul><ul id='DishesByList3' class='dnone'><li id='ll1605725' class='jl' title='0' data-index='0'><div class='dc'><span id='DNm1605725' class='DishesNm'>中华传统牛肉面</span><span class='PrcWord'>￥13</span><span class='bl'>/碗</span></div> <div class='imgdivCs' ><a href='uploadFiles/UpDishesImg/22457/1445937047296.jpg'><img src='Images/grey.gif' class='foodImgClass' alt='中华传统牛肉面(￥13)' data-ks-lazyload='uploadFiles/UpDishesImg/22457/1445937047327.jpg'  data-id='1605725' data-idx='0' data-Sorid='3' /></a><span id='Sale1605725' class='flagsp'>已售3310份</span></div><div id='div1605725' class='hh1' data-price='13'><div id='RecommendchooseDiv1605725' class='choosDiv tradiv'><img src='Images/Actitycm/circleImg.png' id='backImg1605725' class='addAndReduceBackImg1'><div id='Recommenddisplay1605725' data-oldnum='0' class='displayCountDiv'>0</div></div><div id='bargainRightDiv1605725' title='3' class='rightAddDiv' onclick="appendfood(2,1605725,13,'3')"><img src='Images/add.png' class='addAndReduce'></div><div id='RecommendleftDiv1605725' class='leftDivaa' onclick="reducefood(2,1605725,13,'3')"><img src='Images/reduce.png' class='addAndReduceCls'><span id='Sw1605725' class='1'></span></div></div><div class='mgt5'></div><div class='mg5'></div></li><li id='ll1602530' class='jl' title='0' data-index='1'><div class='dc'><span id='DNm1602530' class='DishesNm'>红烧牛肉面</span><span class='PrcWord'>￥18</span><span class='bl'>/例</span></div> <div class='imgdivCs' ><a href='uploadFiles/UpDishesImg/22457/1445939280767.jpg'><img src='Images/grey.gif' class='foodImgClass' alt='红烧牛肉面(￥18)' data-ks-lazyload='uploadFiles/UpDishesImg/22457/1445939280815.jpg'  data-id='1602530' data-idx='1' data-Sorid='3' /></a><span id='Sale1602530' class='flagsp'>已售362份</span></div><div id='div1602530' class='hh1' data-price='18'><div id='RecommendchooseDiv1602530' class='choosDiv tradiv'><img src='Images/Actitycm/circleImg.png' id='backImg1602530' class='addAndReduceBackImg1'><div id='Recommenddisplay1602530' data-oldnum='0' class='displayCountDiv'>0</div></div><div id='bargainRightDiv1602530' title='3' class='rightAddDiv' onclick="appendfood(2,1602530,18,'3')"><img src='Images/add.png' class='addAndReduce'></div><div id='RecommendleftDiv1602530' class='leftDivaa' onclick="reducefood(2,1602530,18,'3')"><img src='Images/reduce.png' class='addAndReduceCls'><span id='Sw1602530' class='1'></span></div></div><div class='mgt5'></div><div class='mg5'></div></li></ul><ul id='DishesByList4' class='dnone'><li id='ll1602525' class='jl' title='0' data-index='0'><div class='dc'><span id='DNm1602525' class='DishesNm'>套餐A</span><span class='PrcWord'>￥25</span><span class='bl'>/例</span></div> <div class='imgdivCs' ><a href='uploadFiles/UpDishesImg/22457/1445938064560.jpg'><img src='Images/grey.gif' class='foodImgClass' alt='套餐A(￥25)' data-ks-lazyload='uploadFiles/UpDishesImg/22457/1445938064605.jpg'  data-id='1602525' data-idx='0' data-Sorid='4' /></a><span id='Sale1602525' class='flagsp'>已售125份</span></div><div id='div1602525' class='hh1' data-price='25'><div id='RecommendchooseDiv1602525' class='choosDiv tradiv'><img src='Images/Actitycm/circleImg.png' id='backImg1602525' class='addAndReduceBackImg1'><div id='Recommenddisplay1602525' data-oldnum='0' class='displayCountDiv'>0</div></div><div id='bargainRightDiv1602525' title='4' class='rightAddDiv' onclick="appendfood(2,1602525,25,'4')"><img src='Images/add.png' class='addAndReduce'></div><div id='RecommendleftDiv1602525' class='leftDivaa' onclick="reducefood(2,1602525,25,'4')"><img src='Images/reduce.png' class='addAndReduceCls'><span id='Sw1602525' class='1'></span></div></div><div class='mgt5'></div><div class='mg5'></div></li><li id='ll1602527' class='jl' title='0' data-index='1'><div class='dc'><span id='DNm1602527' class='DishesNm'>双人套餐</span><span class='PrcWord'>￥50</span><span class='bl'>/例</span></div> <div class='imgdivCs' ><a href='http://www.wecaidan.cn/SearchImage/ImageList/012/双人套餐.jpg'><img src='Images/grey.gif' class='foodImgClass' alt='双人套餐(￥50)' data-ks-lazyload='http://www.wecaidan.cn/SearchImage/Tb_ImageList/012/双人套餐.jpg'  data-id='1602527' data-idx='1' data-Sorid='4' /></a><span id='Sale1602527' class='flagsp'>已售46份</span></div><div id='div1602527' class='hh1' data-price='50'><div id='RecommendchooseDiv1602527' class='choosDiv tradiv'><img src='Images/Actitycm/circleImg.png' id='backImg1602527' class='addAndReduceBackImg1'><div id='Recommenddisplay1602527' data-oldnum='0' class='displayCountDiv'>0</div></div><div id='bargainRightDiv1602527' title='4' class='rightAddDiv' onclick="appendfood(2,1602527,50,'4')"><img src='Images/add.png' class='addAndReduce'></div><div id='RecommendleftDiv1602527' class='leftDivaa' onclick="reducefood(2,1602527,50,'4')"><img src='Images/reduce.png' class='addAndReduceCls'><span id='Sw1602527' class='1'></span></div></div><div class='mgt5'></div><div class='mg5'></div></li><li id='ll1602526' class='jl' title='0' data-index='2'><div class='dc'><span id='DNm1602526' class='DishesNm'>套餐B</span><span class='PrcWord'>￥30</span><span class='bl'>/例</span></div> <div class='imgdivCs' ><a href='http://www.wecaidan.cn/SearchImage/ImageList/013/套餐B.jpg'><img src='Images/grey.gif' class='foodImgClass' alt='套餐B(￥30)' data-ks-lazyload='http://www.wecaidan.cn/SearchImage/Tb_ImageList/013/套餐B.jpg'  data-id='1602526' data-idx='2' data-Sorid='4' /></a><span id='Sale1602526' class='flagsp'>已售42份</span></div><div id='div1602526' class='hh1' data-price='30'><div id='RecommendchooseDiv1602526' class='choosDiv tradiv'><img src='Images/Actitycm/circleImg.png' id='backImg1602526' class='addAndReduceBackImg1'><div id='Recommenddisplay1602526' data-oldnum='0' class='displayCountDiv'>0</div></div><div id='bargainRightDiv1602526' title='4' class='rightAddDiv' onclick="appendfood(2,1602526,30,'4')"><img src='Images/add.png' class='addAndReduce'></div><div id='RecommendleftDiv1602526' class='leftDivaa' onclick="reducefood(2,1602526,30,'4')"><img src='Images/reduce.png' class='addAndReduceCls'><span id='Sw1602526' class='1'></span></div></div><div class='mgt5'></div><div class='mg5'></div></li></ul><ul id='DishesByList5' class='dnone'><li id='ll1605730' class='jl' title='0' data-index='0'><div class='dc'><span id='DNm1605730' class='DishesNm'>雪碧</span><span class='PrcWord'>￥3</span><span class='bl'>/听</span></div> <div class='imgdivCs' ><a href='uploadFiles/UpDishesImg/22457/1445938825410.jpg'><img src='Images/grey.gif' class='foodImgClass' alt='雪碧(￥3)' data-ks-lazyload='uploadFiles/UpDishesImg/22457/1445938825458.jpg'  data-id='1605730' data-idx='0' data-Sorid='5' /></a><span id='Sale1605730' class='flagsp'>已售99份</span></div><div id='div1605730' class='hh1' data-price='3'><div id='RecommendchooseDiv1605730' class='choosDiv tradiv'><img src='Images/Actitycm/circleImg.png' id='backImg1605730' class='addAndReduceBackImg1'><div id='Recommenddisplay1605730' data-oldnum='0' class='displayCountDiv'>0</div></div><div id='bargainRightDiv1605730' title='5' class='rightAddDiv' onclick="appendfood(2,1605730,3,'5')"><img src='Images/add.png' class='addAndReduce'></div><div id='RecommendleftDiv1605730' class='leftDivaa' onclick="reducefood(2,1605730,3,'5')"><img src='Images/reduce.png' class='addAndReduceCls'><span id='Sw1605730' class='1'></span></div></div><div class='mgt5'></div><div class='mg5'></div></li><li id='ll1605729' class='jl' title='0' data-index='1'><div class='dc'><span id='DNm1605729' class='DishesNm'>野山楂</span><span class='PrcWord'>￥15</span><span class='bl'>/瓶</span></div> <div class='imgdivCs' ><a href='uploadFiles/UpDishesImg/22457/1445938737820.jpg'><img src='Images/grey.gif' class='foodImgClass' alt='野山楂(￥15)' data-ks-lazyload='uploadFiles/UpDishesImg/22457/1445938737868.jpg'  data-id='1605729' data-idx='1' data-Sorid='5' /></a><span id='Sale1605729' class='flagsp'>已售93份</span></div><div id='div1605729' class='hh1' data-price='15'><div id='RecommendchooseDiv1605729' class='choosDiv tradiv'><img src='Images/Actitycm/circleImg.png' id='backImg1605729' class='addAndReduceBackImg1'><div id='Recommenddisplay1605729' data-oldnum='0' class='displayCountDiv'>0</div></div><div id='bargainRightDiv1605729' title='5' class='rightAddDiv' onclick="appendfood(2,1605729,15,'5')"><img src='Images/add.png' class='addAndReduce'></div><div id='RecommendleftDiv1605729' class='leftDivaa' onclick="reducefood(2,1605729,15,'5')"><img src='Images/reduce.png' class='addAndReduceCls'><span id='Sw1605729' class='1'></span></div></div><div class='mgt5'></div><div class='mg5'></div></li><li id='ll1605731' class='jl' title='0' data-index='2'><div class='dc'><span id='DNm1605731' class='DishesNm'>可口可乐</span><span class='PrcWord'>￥3</span><span class='bl'>/听</span></div> <div class='imgdivCs' ><a href='uploadFiles/UpDishesImg/22457/1445938871591.jpg'><img src='Images/grey.gif' class='foodImgClass' alt='可口可乐(￥3)' data-ks-lazyload='uploadFiles/UpDishesImg/22457/1445938871646.jpg'  data-id='1605731' data-idx='2' data-Sorid='5' /></a><span id='Sale1605731' class='flagsp'>已售93份</span></div><div id='div1605731' class='hh1' data-price='3'><div id='RecommendchooseDiv1605731' class='choosDiv tradiv'><img src='Images/Actitycm/circleImg.png' id='backImg1605731' class='addAndReduceBackImg1'><div id='Recommenddisplay1605731' data-oldnum='0' class='displayCountDiv'>0</div></div><div id='bargainRightDiv1605731' title='5' class='rightAddDiv' onclick="appendfood(2,1605731,3,'5')"><img src='Images/add.png' class='addAndReduce'></div><div id='RecommendleftDiv1605731' class='leftDivaa' onclick="reducefood(2,1605731,3,'5')"><img src='Images/reduce.png' class='addAndReduceCls'><span id='Sw1605731' class='1'></span></div></div><div class='mgt5'></div><div class='mg5'></div></li><li id='ll1605736' class='jl' title='0' data-index='3'><div class='dc'><span id='DNm1605736' class='DishesNm'>康师傅绿茶</span><span class='PrcWord'>￥4</span><span class='bl'>/瓶</span></div> <div class='imgdivCs' ><a href='uploadFiles/UpDishesImg/22457/1445939147762.jpg'><img src='Images/grey.gif' class='foodImgClass' alt='康师傅绿茶(￥4)' data-ks-lazyload='uploadFiles/UpDishesImg/22457/1445939147810.jpg'  data-id='1605736' data-idx='3' data-Sorid='5' /></a><span id='Sale1605736' class='flagsp'>已售74份</span></div><div id='div1605736' class='hh1' data-price='4'><div id='RecommendchooseDiv1605736' class='choosDiv tradiv'><img src='Images/Actitycm/circleImg.png' id='backImg1605736' class='addAndReduceBackImg1'><div id='Recommenddisplay1605736' data-oldnum='0' class='displayCountDiv'>0</div></div><div id='bargainRightDiv1605736' title='5' class='rightAddDiv' onclick="appendfood(2,1605736,4,'5')"><img src='Images/add.png' class='addAndReduce'></div><div id='RecommendleftDiv1605736' class='leftDivaa' onclick="reducefood(2,1605736,4,'5')"><img src='Images/reduce.png' class='addAndReduceCls'><span id='Sw1605736' class='1'></span></div></div><div class='mgt5'></div><div class='mg5'></div></li><li id='ll1628247' class='jl' title='0' data-index='4'><div class='dc'><span id='DNm1628247' class='DishesNm'>ADE果汁</span><span class='PrcWord'>￥5</span><span class='bl'>/瓶</span></div> <div class='imgdivCs' ><a href='http://www.wecaidan.cn/SearchImage/ImageList/013/ADE果汁.jpg'><img src='Images/grey.gif' class='foodImgClass' alt='ADE果汁(￥5)' data-ks-lazyload='http://www.wecaidan.cn/SearchImage/Tb_ImageList/013/ADE果汁.jpg'  data-id='1628247' data-idx='4' data-Sorid='5' /></a><span id='Sale1628247' class='flagsp'>已售42份</span></div><div id='div1628247' class='hh1' data-price='5'><div id='RecommendchooseDiv1628247' class='choosDiv tradiv'><img src='Images/Actitycm/circleImg.png' id='backImg1628247' class='addAndReduceBackImg1'><div id='Recommenddisplay1628247' data-oldnum='0' class='displayCountDiv'>0</div></div><div id='bargainRightDiv1628247' title='5' class='rightAddDiv' onclick="appendfood(2,1628247,5,'5')"><img src='Images/add.png' class='addAndReduce'></div><div id='RecommendleftDiv1628247' class='leftDivaa' onclick="reducefood(2,1628247,5,'5')"><img src='Images/reduce.png' class='addAndReduceCls'><span id='Sw1628247' class='1'></span></div></div><div class='mgt5'></div><div class='mg5'></div></li><li id='ll1628246' class='jl' title='0' data-index='5'><div class='dc'><span id='DNm1628246' class='DishesNm'>燕京鲜啤</span><span class='PrcWord'>￥6</span><span class='bl'>/瓶</span></div> <div class='imgdivCs' ><a href='http://www.wecaidan.cn/SearchImage/ImageList/008/燕京鲜啤.jpg'><img src='Images/grey.gif' class='foodImgClass' alt='燕京鲜啤(￥6)' data-ks-lazyload='http://www.wecaidan.cn/SearchImage/Tb_ImageList/008/燕京鲜啤.jpg'  data-id='1628246' data-idx='5' data-Sorid='5' /></a><span id='Sale1628246' class='flagsp'>已售41份</span></div><div id='div1628246' class='hh1' data-price='6'><div id='RecommendchooseDiv1628246' class='choosDiv tradiv'><img src='Images/Actitycm/circleImg.png' id='backImg1628246' class='addAndReduceBackImg1'><div id='Recommenddisplay1628246' data-oldnum='0' class='displayCountDiv'>0</div></div><div id='bargainRightDiv1628246' title='5' class='rightAddDiv' onclick="appendfood(2,1628246,6,'5')"><img src='Images/add.png' class='addAndReduce'></div><div id='RecommendleftDiv1628246' class='leftDivaa' onclick="reducefood(2,1628246,6,'5')"><img src='Images/reduce.png' class='addAndReduceCls'><span id='Sw1628246' class='1'></span></div></div><div class='mgt5'></div><div class='mg5'></div></li><li id='ll1605728' class='jl' title='0' data-index='6'><div class='dc'><span id='DNm1605728' class='DishesNm'>北冰洋</span><span class='PrcWord'>￥4</span><span class='bl'>/瓶</span></div> <div class='imgdivCs' ><a href='uploadFiles/UpDishesImg/22457/1445938580408.jpg'><img src='Images/grey.gif' class='foodImgClass' alt='北冰洋(￥4)' data-ks-lazyload='uploadFiles/UpDishesImg/22457/1445938580460.jpg'  data-id='1605728' data-idx='6' data-Sorid='5' /></a><span id='Sale1605728' class='flagsp'>已售28份</span></div><div id='div1605728' class='hh1' data-price='4'><div id='RecommendchooseDiv1605728' class='choosDiv tradiv'><img src='Images/Actitycm/circleImg.png' id='backImg1605728' class='addAndReduceBackImg1'><div id='Recommenddisplay1605728' data-oldnum='0' class='displayCountDiv'>0</div></div><div id='bargainRightDiv1605728' title='5' class='rightAddDiv' onclick="appendfood(2,1605728,4,'5')"><img src='Images/add.png' class='addAndReduce'></div><div id='RecommendleftDiv1605728' class='leftDivaa' onclick="reducefood(2,1605728,4,'5')"><img src='Images/reduce.png' class='addAndReduceCls'><span id='Sw1605728' class='1'></span></div></div><div class='mgt5'></div><div class='mg5'></div></li><li id='ll1605733' class='jl' title='0' data-index='7'><div class='dc'><span id='DNm1605733' class='DishesNm'>野山楂小瓶</span><span class='PrcWord'>￥5</span><span class='bl'>/瓶</span></div> <div class='imgdivCs' ><a href='uploadFiles/UpDishesImg/22457/1445939030878.jpg'><img src='Images/grey.gif' class='foodImgClass' alt='野山楂小瓶(￥5)' data-ks-lazyload='uploadFiles/UpDishesImg/22457/1445939031001.jpg'  data-id='1605733' data-idx='7' data-Sorid='5' /></a><span id='Sale1605733' class='flagsp'>已售24份</span></div><div id='div1605733' class='hh1' data-price='5'><div id='RecommendchooseDiv1605733' class='choosDiv tradiv'><img src='Images/Actitycm/circleImg.png' id='backImg1605733' class='addAndReduceBackImg1'><div id='Recommenddisplay1605733' data-oldnum='0' class='displayCountDiv'>0</div></div><div id='bargainRightDiv1605733' title='5' class='rightAddDiv' onclick="appendfood(2,1605733,5,'5')"><img src='Images/add.png' class='addAndReduce'></div><div id='RecommendleftDiv1605733' class='leftDivaa' onclick="reducefood(2,1605733,5,'5')"><img src='Images/reduce.png' class='addAndReduceCls'><span id='Sw1605733' class='1'></span></div></div><div class='mgt5'></div><div class='mg5'></div></li><li id='ll1605737' class='jl' title='0' data-index='8'><div class='dc'><span id='DNm1605737' class='DishesNm'>康师傅冰红茶</span><span class='PrcWord'>￥4</span><span class='bl'>/瓶</span></div> <div class='imgdivCs' ><a href='uploadFiles/UpDishesImg/22457/1445939187849.jpg'><img src='Images/grey.gif' class='foodImgClass' alt='康师傅冰红茶(￥4)' data-ks-lazyload='uploadFiles/UpDishesImg/22457/1445939187901.jpg'  data-id='1605737' data-idx='8' data-Sorid='5' /></a><span id='Sale1605737' class='flagsp'>已售24份</span></div><div id='div1605737' class='hh1' data-price='4'><div id='RecommendchooseDiv1605737' class='choosDiv tradiv'><img src='Images/Actitycm/circleImg.png' id='backImg1605737' class='addAndReduceBackImg1'><div id='Recommenddisplay1605737' data-oldnum='0' class='displayCountDiv'>0</div></div><div id='bargainRightDiv1605737' title='5' class='rightAddDiv' onclick="appendfood(2,1605737,4,'5')"><img src='Images/add.png' class='addAndReduce'></div><div id='RecommendleftDiv1605737' class='leftDivaa' onclick="reducefood(2,1605737,4,'5')"><img src='Images/reduce.png' class='addAndReduceCls'><span id='Sw1605737' class='1'></span></div></div><div class='mgt5'></div><div class='mg5'></div></li><li id='ll1727465' class='jl' title='0' data-index='9'><div class='dc'><span id='DNm1727465' class='DishesNm'>农夫山泉</span><span class='PrcWord'>￥3</span><span class='bl'>/例</span></div> <div class='imgdivCs' ><a href='uploadFiles/UpDishesImg/22457/1454646970942.jpg'><img src='Images/grey.gif' class='foodImgClass' alt='农夫山泉(￥3)' data-ks-lazyload='uploadFiles/UpDishesImg/22457/1454646970958.jpg'  data-id='1727465' data-idx='9' data-Sorid='5' /></a></div><div id='div1727465' class='hh1' data-price='3'><div id='RecommendchooseDiv1727465' class='choosDiv tradiv'><img src='Images/Actitycm/circleImg.png' id='backImg1727465' class='addAndReduceBackImg1'><div id='Recommenddisplay1727465' data-oldnum='0' class='displayCountDiv'>0</div></div><div id='bargainRightDiv1727465' title='5' class='rightAddDiv' onclick="appendfood(2,1727465,3,'5')"><img src='Images/add.png' class='addAndReduce'></div><div id='RecommendleftDiv1727465' class='leftDivaa' onclick="reducefood(2,1727465,3,'5')"><img src='Images/reduce.png' class='addAndReduceCls'><span id='Sw1727465' class='1'></span></div></div><div class='mgt5'></div><div class='mg5'></div></li></ul></div></div>
+<div id='footer' title='22457'><div id='gg'><div style='position: relative;'><div class='divpricedilan' onclick="takeaway();"><span id='count'>0</span><span id='lbl1'>&nbsp;[&nbsp;￥&nbsp;</span><span id='price'>0</span><span id='lbl2'>&nbsp;]</span>&nbsp;<span style='position: relative;'><img id='arrowbtn' src='systemimg/nextstep12.png' alt='1'></span></div></div></div></div>
+<div id='confirmOverlay'></div>
+<select id="test_select1" style="display: none;" onchange="inputchanged(this.value)">
+    <option value="1">1人</option>
+    <option value="2">2人</option>
+    <option value="3">3人</option>
+    <option value="4">4人</option>
+    <option value="5">5人</option>
+    <option value="6">6人</option>
+    <option value="7">7人</option>
+    <option value="8">8人</option>
+    <option value="9">9人</option>
+    <option value="10">10人</option>
+    <option value="11">11人</option>
+    <option value="12">12人</option>
+    <option value="13">13人</option>
+    <option value="14">14人</option>
+    <option value="15">15人</option>
+    <option value="16">16人</option>
+    <option value="17">17人</option>
+    <option value="18">18人</option>
+    <option value="19">19人</option>
+    <option value="20">20人</option>
+</select>
+<div id='chooseImgBord' class='chooseImgHide'></div>
+<div id="orientLayer" class="mod-orient-layer"><div class="mod-orient-layer__content"><i class="icon mod-orient-layer__icon-orient"></i><div class="mod-orient-layer__desc">为了更好的体验，请使用竖屏浏览</div></div></div>
+<input type="hidden" id="UserByShop" value="1" name="1" title="" data-add="" />
+<input type="hidden" id="ShopByInfo" value="1" name="1" title="" />
+<input type="hidden" id="ByModel" value="0" name="wecaidan" title="" data-name="我要点餐" />
+<input type="hidden" id="ShopFoodEat" value="0" data-fastid="0" data-iseat="0" data-tbware="0" />
+<script src="jquery.confirm/code.photoswipe-3.0.5.min.js"></script>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js" type="text/javascript"></script>
+<script>
+    var foodID; var foods = new Array(); var packs = new Array(); var foodsCountArr = new Array(); var packsCountArr = new Array(); var PriceArr = new Array(); var PackPriceArr = new Array(); var price = 0; var longitude = 0; var latitude = 0; var looktype = $("#ByModel").attr("title"); var sid = $("#footer").attr("title"); var s_name = $("#ByModel").attr("data-name");
+    var foodReduceAndAddID1; var foodReduceAndAddID2; var foodReduceAndAddID3; var foodDisCountID1; var foodDisCountID2; var foodDisCountID3; var foodRecommendID1; var foodRecommendID2; var foodRecommendID3;
+    Array.prototype.del = function (n) { if (n < 0) return this; else return this.slice(0, n).concat(this.slice(n + 1, this.length)); }
+    var myPhotoSwipe; var myScroll; var sUserAgent = navigator.userAgent.toLowerCase(); var bIsIphoneOs = sUserAgent.match(/iphone os/i) == "iphone os"; var bIsAndroid = sUserAgent.match(/android/i) == "android"; var version; var bIsWM = sUserAgent.match(/windows mobile/i) == "windows mobile"; var bisWP = sUserAgent.match(/windows phone/i) == "windows phone";
+    var add_id = $("#UserByShop").attr("data-Add");
+    function scroll(obj) { var tmp = (obj.scrollLeft)++; if (obj.scrollLeft == tmp) { obj.innerHTML += obj.innerHTML; } }
+    if (document.addEventListener) { document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() { WeixinJSBridge.call('hideToolbar'); WeixinJSBridge.call('hideOptionMenu'); }); }
+    if (be_isWechat()) {
+        $.post("../WeCharJSSDK.ashx", { url: window.location.href }, function (data) { if (data) { var dt = eval('(' + data + ')'); wx.config({ debug: false, appId: dt.appId, timestamp: dt.timestamp, nonceStr: dt.nonceStr, signature: dt.signature, jsApiList: ['onMenuShareTimeline', 'onMenuShareAppMessage', 'onMenuShareQQ', 'onMenuShareWeibo'] }) } })
+        wx.ready(function () {
+            wx.onMenuShareTimeline({ title: '欢迎光临' + s_name, link: 'http://www.wecaidan.com/' + sid, imgUrl: 'http://www.wecaidan.com/images/IndexNew/logo.png', success: function () { }, cancel: function () { } });
+            wx.onMenuShareAppMessage({ title: '欢迎光临' + s_name, desc: '打开进入餐厅，可能有特价菜、推荐菜和团购哦，还能自己点餐、叫外卖，方便极了！', link: 'http://www.wecaidan.com/' + sid, imgUrl: 'http://www.wecaidan.com/images/IndexNew/logo.png', type: 'link', dataUrl: '', success: function () { }, cancel: function () { } });
+            wx.onMenuShareQQ({ title: '欢迎光临' + s_name, desc: '打开进入餐厅，可能有特价菜、推荐菜和团购哦，还能自己点餐、叫外卖，方便极了！', link: 'http://www.wecaidan.com/' + sid, imgUrl: 'http://www.wecaidan.com/images/IndexNew/logo.png', success: function () { }, cancel: function () { } });
+            wx.onMenuShareWeibo({ title: '欢迎光临' + s_name, desc: '打开进入餐厅，可能有特价菜、推荐菜和团购哦，还能自己点餐、叫外卖，方便极了！', link: 'http://www.wecaidan.com/' + sid, imgUrl: 'http://www.wecaidan.com/images/IndexNew/logo.png', success: function () { }, cancel: function () { } });
+        });
+    }
+    var orientLayer = document.getElementById("orientLayer");
+    function checkDirect() { if (document.documentElement.clientHeight >= document.documentElement.clientWidth) { return "portrait"; } else { return "landscape"; } }
+    function orientNotice() { var orient = checkDirect(); if (orient == "portrait") { orientLayer.style.display = "none"; } else { orientLayer.style.display = "block"; } }
+    function init() { orientNotice(); window.addEventListener("onorientationchange" in window ? "orientationchange" : "resize", function () { setTimeout(orientNotice, 200); }) }
+    function inputchanged(val) { var tsel = $('#test_select1').attr("name"); if (val && tsel) { clickPrice(tsel, val) } }
+    function loaded() { myScroll = new IScroll('#wrapper', { mouseWheel: true, tap: true, click: true }); myScroll = new IScroll('#wrapperDishes', { mouseWheel: true, tap: true, click: true, bounce: false }); }
+    document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+    var S = KISSY;
+    (function (window, PhotoSwipe) {
+        document.addEventListener('DOMContentLoaded', function () {
+            var options = {
+                        enableMouseWheel: false, enableKeyboard: false, captionAndToolbarAutoHideDelay: 0, slideshowDelay: 1500, getToolbar: function () {
+                            return "<div class='lfjtdiv ps-toolbar-previous'><img src='systemimg/Jleft.png'  class='fimg'/></div><div class='cenjtdiv'><div class='roudOdDiv'><div class='wjiandiv' id='DownDishes'><img src='Images/Writereduce.png' id='DownDishesImg'  class='jianIcon'/></div><div id='Num_Text'>0</div><div class='addBuyDiv' id='buyDishes'><img src='Images/Wirteadd.png' id='buyDishesImg'  class='jiaIcon'></div></div></div><div class='rijtdiv ps-toolbar-next'><img src='systemimg/Jright.png' class='fimg'/></div>";
+                        }
+                    },
+                    instance = PhotoSwipe.attach(window.document.querySelectorAll('#RightScroller a'), options);
+            instance.addEventHandler(PhotoSwipe.EventTypes.onDisplayImage, function (e) {
+                var obj = $(instance.getCurrentImage().refObj.firstElementChild);
+                var Diseshid = obj.attr("data-id");
+                var dishNumber = $("#Recommenddisplay" + Diseshid + "").html();
+                if (dishNumber) {
+                    $("#Num_Text").html(dishNumber);
+                } else {
+                    $("#Num_Text").html("0");
+                }
+                var SortNameId = obj.attr("data-Sorid");
+                var DishesIndex = obj.attr("data-idx");
+                if (SortNameId) {
+                    $("#RightScroller ul").hide();
+                    $("#DishesByList" + SortNameId + "").show();
+                    myScroll.refresh();
+                    $(".bigliCls").removeClass("bigliCls");
+                    $("#BigLi" + SortNameId + "").addClass("bigliCls");
+                }
+                if (DishesIndex && SortNameId) {
+                    if (DishesIndex == 0) { DishesIndex = 1 };
+                    var d = document.querySelector("#RightScroller #DishesByList" + SortNameId + " li:nth-child(" + DishesIndex + ")");
+                    myScroll.scrollToElement(d, 10, null, true);
+                }
+            });
+            instance.addEventHandler(PhotoSwipe.EventTypes.onToolbarTap, function (e) {
+                var action = e.tapTarget.id;
+                var obj = $(instance.getCurrentImage().refObj.firstElementChild);
+                var Diseshid = obj.attr("data-id");
+                var SortNameId = obj.attr("data-Sorid");
+                var price = $("#div" + Diseshid + "").attr("data-price");
+                switch (action) {
+                    case "buyDishes":
+                    case "buyDishesImg":
+                        if (Diseshid) { if (SortNameId && price) { appendfood(2, Diseshid, price, SortNameId); var hm = $("#Recommenddisplay" + Diseshid + "").html(); if (hm) { $("#Num_Text").html(hm); } } }
+                        break;
+                    case "DownDishes":
+                    case "DownDishesImg":
+                        if (Diseshid) { if (SortNameId && price) { var hm = $("#Recommenddisplay" + Diseshid + "").html(); if (hm && parseInt(hm) >= 0) { if (parseInt(hm) > 0) { reducefood(2, Diseshid, price, SortNameId); var dnum = parseInt(hm) - 1; $("#Num_Text").html(dnum); } else { $("#Num_Text").html("0"); $("#Recommenddisplay" + Diseshid + "").html("0"); } } else { $("#Num_Text").html("0"); $("#Recommenddisplay" + Diseshid + "").html("0"); } } }
+                        break;
+                }
+            });
+        }, false);
+    }(window, window.Code.PhotoSwipe));
+    $(function () {
+        init();
+        $("#scrollobj").fadeIn(1500);
+        setInterval("scroll(document.getElementById('scrollobj'))", 20);
+        KISSY.use('gallery/datalazyload/1.0.1/index', function (S, DataLazyload) {
+            DataLazyload('#RightScroller');
+        });
+        var open_id = $("#UserByShop").attr("title");
+        if (open_id) {
+            var date = new Date();
+            date.setTime(date.getTime() + 365 * 24 * 60 * 60 * 1000);
+            $.cookie("openid", open_id, { path: '/', expires: date });
+        }
+        if (add_id) {
+            $("#header").html("请在以下选择要添加的菜品").css("background", "#b30000");
+        } else {
+            $("#header").css("background", "#333");
+            $("#header").click(function () {
+                location.href = "ActivitiesPage.aspx?si=" + sid;
+            })
+        }
+        if (!looktype) {
+            var cookDishesList = $.cookie("ArrayInfo");
+            if (cookDishesList) {
+                var ckstr = cookDishesList.split('-');
+                if (ckstr.length == 5) {
+                    var Ckshopid = ckstr[0];
+                    if (Ckshopid == sid) {
+                        var foodarray = ckstr[1].split(',');
+                        var foodnumberArray = ckstr[2].split(',');
+                        var foodPrice = ckstr[4].split(',');
+                        if (foodarray.length > 0 && foodnumberArray.length > 0 && foodnumberArray.length == foodarray.length && foodnumberArray.length == foodPrice.length) {
+                            var PriceCook = 0;
+                            var SortSp = 0;
+                            for (var i = 0; i < foodarray.length; i++) {
+                                foodID = foodarray[i];
+                                if ($("#Sw" + foodID + "").attr("class") == 1) {
+                                    var dishesArray = new Array();
+                                    var priceold = $("#div" + foodID + "").attr("data-price");
+                                    var oldPriceFd = parseFloat(priceold) * parseInt(foodnumberArray[i]);
+                                    if (parseFloat(oldPriceFd) == parseFloat(foodPrice[i])) {
+                                        foodReduceAndAddID1 = "chooseDiv" + foodID + "";
+                                        foodReduceAndAddID2 = "leftDiv" + foodID + "";
+                                        foodReduceAndAddID3 = "display" + foodID + "";
+                                        foodRecommendID1 = "RecommendchooseDiv" + foodID;
+                                        foodRecommendID2 = "RecommendleftDiv" + foodID;
+                                        foodRecommendID3 = "Recommenddisplay" + foodID;
+                                        $("#" + foodRecommendID3 + "").attr("data-oldnum", foodnumberArray[i]).html(foodnumberArray[i]);
+                                        foods.push(foodID);
+                                        dishesArray.push(foodID);
+                                        foodsCountArr.push(foodnumberArray[i]);
+                                        PriceArr.push(foodPrice[i]);
+                                        PriceCook = parseFloat(PriceCook) + parseFloat(foodPrice[i])
+                                        $("#Sale" + foodID + "").hide();
+                                        showAnimation(2);
+                                        var sortID = $("#bargainRightDiv" + foodID + "").attr("title");
+                                        if (sortID) {
+                                            var Scn = $("#RedRo" + sortID + "").html();
+                                            Scn = parseInt(Scn) + parseInt(foodnumberArray[i]);
+                                            $("#RedRo" + sortID + "").html(Scn).show();
+                                            $("#BigLi" + sortID + "").attr("data-array", dishesArray.toString());
+                                        }
+                                        if (i == 0) {
+                                            SortSp = sortID;
+                                            six = foodID;
+                                        }
+                                        //$("#" + foodRecommendID2 + "").find(".addAndReduceCls").attr("src", "images/garydown.png");
+                                    }
+                                }
+                            }
+                            if (SortSp) {
+                                $("#RightScroller ul").css("display", "none");
+                                $("#DishesByList" + SortSp + "").css("display", "block");
+                                $(".bigliCls").removeClass("bigliCls");
+                                $("#BigLi" + SortSp + "").addClass("bigliCls").attr("data-ctp", 1);
+                            }
+                            GetCountinDishes(foodsCountArr, packsCountArr);
+                            price = PriceCook;
+                            document.getElementById("price").innerHTML = changeTwoDecimal_f(price);
+                        }
+
+                    } else {
+                        $.cookie("ArrayInfo", null);
+                    }
+                }
+            }
+        }
+        var wheelwd = $(window).width() - 34;
+        $('#test_select1').mobiscroll({
+            preset: 'select', theme: 'android-ics light', mode: 'scroller', headerText: '选择就餐人数', display: 'bottom', lang: 'zh', width: wheelwd,
+            onCancel: function () {
+
+            }
+        });
+    })
+    function unchooseType() { chooseDiv = false; if (bisWP || bIsWM) { $("#chooseImgBord").css({ 'bottom': '-210px', '-webkit-transition': 'bottom 0.3s ease-out 0s' }) } else { if (bIsAndroid && version < 4) { spareAnimation() } else { $("#chooseImgBord").attr('class', 'chooseImgHide') } } $("#confirmOverlay").fadeOut(300) }
+    var chooseDiv = false;
+    function showChooseType() { chooseDiv = true; $("#confirmOverlay").fadeIn(10, function () { if (bisWP || bIsWM) { $("#chooseImgBord").css({ 'bottom': '-5px', '-webkit-transition': 'bottom 0.3s ease-out 0s' }) } else { if (bIsAndroid && version < 4) { spareAnimation() } else { $("#chooseImgBord").attr('class', 'chooseImgShow'); } } }) };
+    function NotGaryNext() { alert("在线支付已关闭，请找餐厅开启"); }
+    function OutDs(tp, time) { switch (tp) { case 1: if (time) { var timearr = time.split('|'); var TimeStr = "该菜品还未到供应时段,供应时段为："; if (timearr.length > 0) { for (var i = 0; i < timearr.length; i++) { var strt = timearr[i].split(','); if (strt.length == 3) { if (strt[1] == strt[2]) { TimeStr += " " + MonthTxt(strt[0]); if (i == timearr.length - 1) { TimeStr += "(" + strt[1] + "-" + strt[2] + ")" } } else { TimeStr += " " + MonthTxt(strt[0]) + "(" + strt[1] + "-" + strt[2] + ")" } } } } } alert(TimeStr); break; case 2: alert("该菜品已售罄"); break } }
+    function MonthTxt(t) { var mont = ""; switch (parseInt(t)) { case 1: mont = "周一"; break; case 2: mont = "周二"; break; case 3: mont = "周三"; break; case 4: mont = "周四"; break; case 5: mont = "周五"; break; case 6: mont = "周六"; break; case 0: mont = "周日"; break } return mont };
+    function spareAnimation() { if (parseInt($("#chooseImgBord").css('bottom')) == -240) { $("#chooseImgBord").animate({ bottom: '-5px' }, 300); } else if (parseInt($("#chooseImgBord").css('bottom')) == -5) { $("#chooseImgBord").animate({ bottom: '-240px' }, 300); } }
+    function hideCollbtn(type) { if (type == 1) { $("#collectbtn").slideUp(100); } else { $("#collectbtn").css('display', 'none'); } collbtnisshow = false; }
+    function takeaway() {
+        var wcd_Black = $("#UserByShop").attr("name");
+        if (wcd_Black != 0) {
+            var user_Black = $("#UserByShop").val();
+            if (user_Black != 0) {
+                var pric = $("#price").html();
+                if (pric == 0) { alert("您还未选择菜品"); return; }
+                else {
+
+                    var eatInShop = $("#ShopFoodEat").val();
+                    if (parseInt(eatInShop) == 1) {
+                        alert('抱歉，当前非餐厅营业时段，请稍后再来！');
+                        $("#confirmOverlay").hide(); return;
+                    } else {
+                        var cfm = $("#ByModel").val();
+                        var iseatperson = $("#ShopFoodEat").attr("data-iseat");
+                        var tableware = $("#ShopFoodEat").attr("data-tbware");
+                        if (cfm) {
+
+                            switch (parseInt(cfm)) {
+                                case 0:
+                                    if (iseatperson == 1 && !add_id) {
+                                        $('#test_select1').attr("name", 0).click();
+                                    } else {
+                                        clickPrice(0, 0);
+                                    }
+                                    break;
+                                case 1:
+                                    clickPrice(1, 0);
+                                    break;
+                                case 2:
+                                    clickPrice(2, 0);
+                                    break;
+                                case 4:
+                                    if (iseatperson == 1) {
+                                        $('#test_select1').attr("name", 4).click();
+                                    } else {
+                                        clickPrice(4, 0);
+                                    }
+                                    break;
+                                case 5:
+                                    alert("抱歉,预览状态下不允许下单");
+                                    break;
+                                case -1:
+                                    alert("抱歉，本店暂不支持外卖和预订");
+                                    break;
+
+                            }
+                        } else {
+                            showChooseType();
+                        }
+                    }
+                }
+            } else {
+                alert("抱歉,由于您频繁下单,已被系统加入黑名单,如需解除请联系该餐厅。");
+            }
+        } else {
+            alert("抱歉,由于你被多次举报,已被系统加入黑名单,将不可解除。");
+        }
+    }
+    function clickPrice(type, person) {
+        if (chooseDiv) {
+            unchooseType();
+            setTimeout('clickPrice(' + type + ',0)', 300); return false;
+        }
+        var showt = $("#ShopByInfo").val();
+        if (showt == 0 && type != 4) {
+            alert('抱歉，当前餐厅暂停接收订单,请稍后再来！'); $("#confirmOverlay").hide(); return;
+        }
+        if (type == 1) {
+            var htk = $("#ShopByInfo").attr("name");
+            var weekTxt = $("#ShopByInfo").attr("title");
+            if (htk == 0) {
+                alert("抱歉,今日不外送.送餐日为：" + weekTxt);
+                $("#confirmOverlay").hide(); return;
+            }
+        }
+
+        var ct = $("#count").html();
+        var pric = $("#price").html();
+        var tablenumber = $("#ByModel").attr("name");
+        var Oprc = parseFloat(pric).toFixed(2);
+        if (parseInt(ct) > 0 && Oprc > 0 && (foods.length > 0 || packs.length > 0) && sid) {
+            var psnparm = ""; var addparm = ""; var Faststr = "";
+            if (person > 0) {
+                psnparm = "&psn=" + person;
+            }
+            if (add_id && parseInt(add_id) > 0) {
+                addparm = "&add_id=" + add_id;
+            }
+            var Fast_Tb = $("#ShopFoodEat").attr("data-FastID");
+            if (Fast_Tb) {
+                Faststr = "&fatb=" + Fast_Tb;
+            }
+            var wecahrt = 0;
+            if (be_isWechat()) {
+                wecahrt = 1;
+                var wcdurl = encodeURIComponent("http://www.wecaidan.com/wxpay/DishesList.aspx?showwxpaytitle=1&cn=" + ct + "&pc=" + pric + "&ls=" + foods.toString() + "&foodNum=" + foodsCountArr.toString() + "&pck=" + packs.toString() + "&packNum=" + packsCountArr.toString() + "&ptp=" + type + "&sd=" + sid + Faststr + "&lng=" + longitude + "&lat=" + latitude + "&number=" + tablenumber + "&wc=" + wecahrt + psnparm + addparm);
+                $.cookie("WechartPayByOrder", location.href, { path: '/' });
+                window.location.href = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx544b31ebb394ef45&redirect_uri=" + wcdurl + "&response_type=code&scope=snsapi_base&state=123#wechat_redirect";
+
+            } else {
+                wecahrt = 0;
+                var LinkUrl = "Default.aspx?utp=1&cn=" + ct + "&pc=" + pric + "&ls=" + foods.toString() + "&foodNum=" + foodsCountArr.toString() + "&pck=" + packs.toString() + "&packNum=" + packsCountArr.toString() + "&ptp=" + type + "&sd=" + sid + Faststr + "&lng=" + longitude + "&lat=" + latitude + "&number=" + tablenumber + "&wc=" + wecahrt + psnparm + addparm;
+                window.location.href = LinkUrl;
+            }
+        }
+    }
+    function be_isWechat() { var ua = navigator.userAgent.toLowerCase(); if (ua.match(/MicroMessenger/i) == "micromessenger") { return true; } else { return false; } }
+    var t5 = null;
+    var six = 0;
+    function ShowSortNameByDishesList(id) { if (id) { $("#RightScroller ul").css("display", "none"); $("#DishesByList" + id + "").css("display", "block"); $(".redCols").removeClass("redCols"); myScroll.refresh(); if (six == id) { $(".bigliCls").removeClass("bigliCls") } else { $(".bigliCls").removeClass("bigliCls").attr("data-ctp", 0); $("#blue" + id + "").addClass("redCols") } six = id; KISSY.use('gallery/datalazyload/1.0.1/index', function (S, DataLazyload) { DataLazyload('#RightScroller') }); $("#BigLi" + id + "").addClass("bigliCls"); var ctp = $("#BigLi" + id + "").attr("data-ctp"); if (ctp == 1) { var bgarray = $("#BigLi" + id + "").attr("data-array"); $("#BigLi" + id + "").attr("data-ctp", 0); if (bgarray) { var bga = bgarray.split(','); if (bga.length > 0) { var index = $("#ll" + bga[0] + "").attr("data-index"); if (index) { var d = document.querySelector("#RightScroller #DishesByList" + id + " li:nth-child(" + index + ")"); myScroll.scrollToElement(d, 300, null, true); } } } } else { $("#BigLi" + id + "").attr("data-ctp", 1); } } };
+    function showAnimation(tp) { $("#" + foodReduceAndAddID1 + "").attr('class', 'choosDivScale'); $("#bargain" + foodID + ",#RecommendchooseDiv" + foodID + ",#chooseDiv" + foodID + "").css("border-color", "#111"); $("#backImg" + foodID + "").css('display', 'none'); $("#backImg" + foodID + "").attr('class', 'addAndReduceBackImg2'); $("#" + foodReduceAndAddID1 + "").attr('class', 'choosDivScale'); $("#" + foodReduceAndAddID3 + "").fadeIn(100); $("#" + foodReduceAndAddID2 + "").fadeIn(10); if (tp == 2 || tp == 5) { $("#" + foodRecommendID1 + "").attr('class', 'choosDivScale'); $("#" + foodRecommendID3 + "").fadeIn(100); $("#" + foodRecommendID2 + "").fadeIn(10) } if (tp == 3 || tp == 5) { $("#" + foodDisCountID1 + "").attr('class', 'choosDivScale'); $("#" + foodDisCountID3 + "").fadeIn(100); $("#" + foodDisCountID2 + "").fadeIn(10); } };
+    var t1 = null;
+    function appendfood(tp, ID, p, sortid) {
+        foodID = ID;
+        var pos = getFoodsPosition(ID);
+        if (pos >= 0) {
+            var count = parseInt(foodsCountArr[pos]);
+            count++;
+            foodsCountArr.splice(pos, 1, count);
+            PriceArr.splice(pos, 1, parseFloat(p) * parseInt(count));
+            $("#display" + ID + "").html(count);
+            $("#Recommenddisplay" + ID + "").html(count);
+        } else {
+            $("#Sale" + ID + "").hide();
+            foods.push(ID);
+            PriceArr.push(p);
+            foodsCountArr.push("1");
+            foodReduceAndAddID1 = "chooseDiv" + ID + "";
+            foodReduceAndAddID2 = "leftDiv" + ID + "";
+            foodReduceAndAddID3 = "display" + ID + "";
+            foodRecommendID1 = "RecommendchooseDiv" + ID;
+            foodRecommendID2 = "RecommendleftDiv" + ID;
+            foodRecommendID3 = "Recommenddisplay" + ID;
+            $("#Recommenddisplay" + ID + "").html("1");
+            showAnimation(tp);
+        }
+        ReadRoundNumber(sortid, 1);
+        price += parseFloat(p);
+        $.cookie("ArrayInfo", sid + "-" + foods.toString() + "-" + foodsCountArr.toString() + "-" + price + "-" + PriceArr.toString(), { path: '/' });
+        GetCountinDishes(foodsCountArr, packsCountArr);
+        var dataary = $("#BigLi" + sortid + "").attr("data-array");
+        if (!dataary) {
+            $("#BigLi" + sortid + "").attr("data-array", ID);
+        }
+        if (parseFloat(price) >= 0) {
+            document.getElementById("price").innerHTML = changeTwoDecimal_f(price);
+        }
+        else {
+            document.getElementById("price").innerHTML = "0.0";
+            $.cookie("ArrayInfo", null);
+        }
+        UpdateSale(ID);
+    }
+    function UpdateSale(id) { $.post("NewCollcetion.ashx", { action: "Sale", did: id }, function (data) { }) }
+    function ReadRoundNumber(id, tp) { if (id) { var Sortcount = $("#RedRo" + id + "").html(); var numberCol = $("#Recommenddisplay" + id + "").html(); switch (tp) { case 0: Sortcount = parseInt(Sortcount) - 1; if (parseInt(Sortcount) > 0) { $("#RedRo" + id + "").html(Sortcount).show() } else { $("#RedRo" + id + "").html("0").hide() } break; case 1: Sortcount = parseInt(Sortcount) + 1; $("#RedRo" + id + "").html(Sortcount).show(); break } } }
+    var t3 = null;
+    function reducefood(tp, ID, p, sortid) {
+        var pos = getFoodsPosition(ID);
+        var count = parseInt(foodsCountArr[pos]);
+        count--;
+        if (count == 0) {
+            foods = foods.del(pos);
+            foodsCountArr = foodsCountArr.del(pos);
+            PriceArr = PriceArr.del(pos);
+            foodReduceAndAddID1 = "chooseDiv" + ID + "";
+            foodReduceAndAddID2 = "leftDiv" + ID + "";
+            foodReduceAndAddID3 = "display" + ID + "";
+            if (tp == 2) {
+                foodRecommendID1 = "RecommendchooseDiv" + ID;
+                foodRecommendID2 = "RecommendleftDiv" + ID;
+                foodRecommendID3 = "Recommenddisplay" + ID
+            } else if (tp == 3) {
+                foodDisCountID1 = "bargain" + ID;
+                foodDisCountID2 = "bargainleftDiv" + ID;
+                foodDisCountID3 = "bargaindisplay" + ID
+            }
+            $("#Recommenddisplay" + ID + "").html("0");
+            hideAnimation(tp);
+            $("#Sale" + ID + "").show()
+        } else {
+            var oldnum = $("#Recommenddisplay" + ID).attr("data-oldnum");
+            foodsCountArr.splice(pos, 1, count);
+            PriceArr.splice(pos, 1, parseFloat(p) * parseInt(count));
+            $("#display" + ID + ",#bargaindisplay" + ID + ",#Recommenddisplay" + ID + "").html(count)
+            //if (count <= oldnum) {
+            //    $("#RecommendleftDiv" + ID + "").hide();
+            //    $("#Recommenddisplay" + ID).addClass("grayclass");
+            //}
+        }
+        ReadRoundNumber(sortid, 0);
+        price -= parseFloat(p);
+        $.cookie("ArrayInfo", sid + "-" + foods.toString() + "-" + foodsCountArr.toString() + "-" + price + "-" + PriceArr.toString(), { path: '/' });
+        GetCountinDishes(foodsCountArr, packsCountArr);
+        var dataary = $("#BigLi" + sortid + "").attr("data-array");
+        if (dataary && dataary == ID) {
+            $("#BigLi" + sortid + "").attr("data-array", "")
+        } else {
+            $("#BigLi" + sortid + "").attr("data-array", "")
+        } if (parseFloat(price) > 0) {
+            document.getElementById("price").innerHTML = parseFloat(changeTwoDecimal_f(price))
+        } else {
+            document.getElementById("price").innerHTML = "0.00";
+            $.cookie("ArrayInfo", null);
+        }
+    }
+    function changeTwoDecimal_f(x) { var f_x = parseFloat(x); if (isNaN(f_x)) { alert('function:changeTwoDecimal->parameter error'); return false } var f_x = Math.round(x * 100) / 100; var s_x = f_x.toString(); var pos_decimal = s_x.indexOf('.'); if (pos_decimal < 0) { } else { while (s_x.length <= pos_decimal + 2) { s_x += '0' } } return s_x };
+    function hideAnimation(tp) { $("#" + foodReduceAndAddID1 + "").attr('class', 'choosDiv'); $("#bargain" + foodID + ",#RecommendchooseDiv" + foodID + ",#chooseDiv" + foodID + "").css("border-color", "#000"); $("#backImg" + foodID + "").css('display', 'none'); $("#backImg" + foodID + "").attr('class', 'addAndReduceBackImg1'); $("#" + foodReduceAndAddID1 + "").attr('class', 'choosDiv'); $("#" + foodReduceAndAddID3 + "").fadeOut(10); $("#" + foodReduceAndAddID2 + "").fadeOut(10); if (tp == 2) { $("#" + foodRecommendID1 + "").attr('class', 'choosDiv'); $("#" + foodRecommendID3 + "").fadeOut(10); $("#" + foodRecommendID2 + "").fadeOut(10) } else if (tp == 3) { $("#" + foodDisCountID1 + "").attr('class', 'choosDiv'); $("#" + foodDisCountID3 + "").fadeOut(10); $("#" + foodDisCountID2 + "").fadeOut(10); } };
+    function GetCountinDishes(foodsCountArr, packsCountArr) { var DishesCountArray = 0; if (foodsCountArr.length > 0) { for (var f = 0; f < foodsCountArr.length; f++) { DishesCountArray += parseInt(foodsCountArr[f]) } } if (packsCountArr.length > 0) { for (var p = 0; p < packsCountArr.length; p++) { DishesCountArray += parseInt(packsCountArr[p]) } } else { } if (parseInt(DishesCountArray) > 0) { document.getElementById("count").innerHTML = DishesCountArray } else { document.getElementById("count").innerHTML = "0"; $.cookie("ArrayInfo", null); } }
+    function getFoodsPosition(ID) { var pos = -1; for (var j = 0; j < foods.length; j++) { if (ID == foods[j]) { pos = j; break } } return pos }
+    var t = true;
+    function getAbsTop(obj) { var top = obj.offsetTop; while (obj.offsetParent != null) { obj = obj.offsetParent; top += obj.offsetTop; } return top; }
+    var ht = $(window).height();
+    if (looktype && parseInt(looktype) == 1) { $("#wrapper").css("height", ht - 30); } else { $("#wrapper").css("height", ht - 80); }
+</script>
+</body>
+</html>
+

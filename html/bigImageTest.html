@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport"
+          content="width=device-width,minimum-scale=1.0,maximum-scale=1.0"/>
+    <title>菜单</title>
+    <meta http-equiv="Expires" content="0"/>
+
+    <script src="../lib/jquery-1.11/jquery-1.11.1.min.js"></script>
+    <script src="../lib/iscroll-5/iscroll.js"></script>
+    <script src="../lib/Swiper-3.3.1/js/swiper.jquery.min.js"></script>
+
+    <script src="../lib/jsRander/jsrander.min.js"></script>
+
+    <link href="../lib/Swiper-3.3.1/css/swiper.min.css" rel="stylesheet" type="text/css">
+    <link href="../css/common.css" rel="stylesheet" type="text/css">
+    <link href="../css/menu.css?v=1.11" rel="stylesheet" type="text/css">
+
+    <script>
+        $(function () {
+
+            var dishInfo = [{
+                "dishGroupId": "53e0efe09f1a4529b37ed785c0223291",
+                "dishGroupName": "营养汤羹",
+                "dishes": [
+                    {
+                        "dishId": "240fb7de0cef48e5b0edad79f348736d",
+                        "dishName": "蔬菜煎蛋汤",
+                        "dishInfo": "",
+                        "dishNo": "102",
+                        "dishPic": "../imags/s-wait.png",
+                        "dishBigPic": "../imags/s-wait.png",
+                        "price": 1500,
+                        "dishUnit": "份",
+                        "dishAttrData": [],
+                        "dishAttrOptionPriceData": [],
+                        "sideDishData": [],
+                        "groupIndex": [],
+                        "groupType": [],
+                        "rowIndex": "0_0"
+                    }
+                ],
+                "groupType": 0
+            }];
+            var dishInfo2 = [];
+            for(var i = 0; i < 10; i ++){
+                var dish = $.extend(true, {}, dishInfo[0]);
+                for(var j = 0; j < 10; j ++){
+                    dish.dishes.push($.extend(true, {}, dishInfo[0].dishes[0]));
+                }
+                dishInfo2.push(dish);
+            }
+
+            console.log(dishInfo2);
+
+            renderFunction();
+            buildBigImageMenu(dishInfo2,568,0);
+            initBigImgMenuPlugin($("#b-menu-container"), $("#b-category-list"));
+
+        });
+        document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+
+        var pluginsObj;
+        function buildBigImageMenu (dishMenu, height, headHeight){
+
+            var menuLength = dishMenu.length,
+                    $b_menu_wrapper = $("#b-menu-wrapper"),
+                    $b_category_list = $("#b-category-list"),
+                    $b_menu_container = $("#b-menu-container"),bigImgHtml = "";
+            height = height -40;
+            $("#b-menu-main").css('top', headHeight);
+            $b_menu_container.css('height', height);
+            $b_menu_wrapper.css('height', height);
+            $b_category_list.append($("#bigImgNav").render(dishMenu));
+            for (var i = 0; i < menuLength; i++) {
+                var dishList = dishMenu[i].dishes, dishListLength = dishList.length;
+                if(dishMenu[i].dishes.length <= 0){
+                    continue;
+                }
+                var bigImgSwiperId = {"bigImgSwiperId":i};
+                //生成外层模板
+                var bigImgSwiperHtml = $("#bigImgSwiperTemp").render(bigImgSwiperId),
+                        bigImgHasImg = [], bigImgNoImg = [];
+
+                for(var j=0; j< dishListLength; j++){
+                    var bigImgDishes = dishList[j];
+                    //给每个菜品添加Id
+                    bigImgDishes.groupName = dishMenu[i].dishGroupName;
+                    bigImgDishes.groupId = dishMenu[i].dishGroupId;
+                    //根据有图无图进行分类
+                    if(bigImgDishes.dishBigPic || bigImgDishes.dishBigPic != ''){
+                        bigImgHasImg.push(bigImgDishes);
+                    }else{
+                        bigImgNoImg.push(bigImgDishes);
+                    }
+                }
+                //分别生成有图和无图模板
+                var bigImgHasImgHtml = '',bigImgNoImgHtml = '';
+                if(bigImgHasImg.length > 0){
+                    bigImgHasImgHtml = $("#bigImgHasImg").render(bigImgHasImg);
+                    bigImgHasImgHtml = $("#b-dish-slide-img").render().replace("$hasImg", bigImgHasImgHtml);
+                }
+                if(bigImgNoImg.length > 0){
+                    bigImgNoImgHtml = $("#bigImgNoImg").render(bigImgNoImg);
+                    bigImgNoImgHtml = $("#b-dish-slide-no-img").render().replace("$noImg", bigImgNoImgHtml);
+                }
+                bigImgHtml += bigImgSwiperHtml.replace("$slide",bigImgHasImgHtml + bigImgNoImgHtml );
+            }
+            $b_menu_wrapper.empty().html(bigImgHtml);
+            $(".mw-menu").removeClass('hidden');
+            var $pageInner = $('.page-inner');
+            var width = window.innerWidth, $hasImage = $('.has-image'), imgWidth = 0;
+            console.log(width);
+            $pageInner.find('.dish-item').outerWidth((width - 15) / 2);
+            imgWidth = $hasImage.find('.b-img').outerWidth();
+            height = imgWidth * 250 / 347 + 60;
+            $hasImage.find('.dish-item').outerHeight(height);
+            $hasImage.find('.b-img').outerHeight(imgWidth * 250 / 347);
+            //大图模式初始化顶部导航栏样式
+            $b_category_list.find('li:first-child').addClass('b-li-active');
+        }
+
+        function initBigImgMenuPlugin($menuContain, $b_category_list){
+
+            var bigImgCateIScroll = new IScroll("#b-category-wrapper", {
+                click: true,
+                scrollX: true,
+                scrollY: false,
+//                noSwiping: true,
+                mouseWheel: true
+            });
+            var bigImgContainerSwiper = $menuContain.swiper({
+                mode: 'horizontal',
+                onSlideChangeStart: function (swiper) {
+                    $('#b-menu-wrapper').trigger('scroll');
+                },
+                onSlideChangeEnd: function (swiper) {
+                    var index = swiper.activeIndex + 1;
+                },onTouchMove: function(swiper){
+                    $('#b-menu-wrapper').trigger('scroll');
+                }
+            });
+            /*$('.b-dish-container').each(function () {
+
+             var $this = $(this);
+
+             console.log($this);
+
+             var swip = $this.swiper({
+             mode: 'vertical',
+             scrollContainer: true,
+             momentumBounceRatio: 2,
+             watchActiveIndex: true,
+             onTouchStart: function () {
+             $('#b-menu-wrapper').trigger('scroll');
+             },
+             onResistanceBefore: function (s, pos) {
+             },
+             onResistanceAfter: function (s, pos) {
+             },
+             onTouchEnd: function () {
+             $('#b-menu-wrapper').trigger('scroll');
+             }, onTouchMove: function (swiper) {
+             $('#b-menu-wrapper').trigger('scroll');
+             }
+             });
+             });*/
+            return pluginsObj;
+        }
+        function renderFunction(){
+            $.views.helpers({
+                "trans2yuan" : function (price) {
+                    if($.isNumeric(price)){
+                        return parseFloat(price/100).toFixed(2);
+                    }else{
+                        return 0.00;
+                    }
+                },
+                "imgPath": function (dishPic) {
+                    return "/" + dishPic;
+                }
+            });
+        }
+
+
+    </script>
+</head>
+<body>
+
+<!-- 大图模式-->
+<div id="b-menu-main" class="main big-img" data-sort="1" style="max-height: 640px;">
+    <div id="b-category-main" class="nav">
+        <div id="b-category-wrapper" class="mw-category">
+            <ul id="b-category-list" class="nav-ul">
+            </ul>
+        </div>
+        <span class="menu-type big-img-icon"></span>
+    </div>
+    <div id="b-menu-container" class="b-menu-container swiper-container">
+        <div id="b-menu-wrapper" class="swiper-wrapper"></div>
+    </div>
+</div>
+
+
+
+<script id="bigImgNav" type="text/x-jsrender">
+	<li id="b-category-{{:#index}}" data-page="{{:dishGroupId}}">
+		{{if dishGroupName.indexOf('店长推荐') > -1}}
+			<span class="recommend"></span>
+			<span class="group-name" style="margin-left:17px">{{:dishGroupName}}</span>
+		{{else}}
+		    <span class="group-name" >{{:dishGroupName}}</span>
+		{{/if}}
+		<span class="dish-group-num hidden">0</span>
+	</li>
+</script>
+<script id="bigImgSwiperTemp" type="text/x-jsrender">
+<div id="b-dish-slide-{{:bigImgSwiperId}}" class="b-menu-slide swiper-slide">
+	<div id="b-dish-{{:bigImgSwiperId}}" class="b-dish-container swiper-container">
+	    <div class="swiper-wrapper">
+	        <div class="swiper-slide">
+	            $slide
+	        </div>
+        </div>
+	</div>
+</div>
+</script>
+<script id="b-dish-slide-img" type="text/x-jsrender">
+    <ul class="page-inner has-image">
+        $hasImg
+    </ul>
+</script>
+<script id="b-dish-slide-no-img" type="text/x-jsrender">
+    <ul class="page-inner no-image">
+        $noImg
+    </ul>
+</script>
+<script id="bigImgNoImg" type="text/x-jsrender">
+	<li id="b_{{:rowIndex}}" data-dish_id="{{:dishId}}"
+	    data-group_name="{{:groupName}}" data-dish_name="{{:dishName}}"
+	    {{if dishAttrData.length > 0 || sideDishData.length > 0}}
+                data-option = "1"
+        {{else}}
+                data-option = "0"
+        {{/if}}
+		data-price="{{:~trans2yuan(price)}}" class="b-dish-noImg-info dish-item">
+		<div class="b-dish-letter">
+			<h3 class="b-dish-name ell">{{:dishName}}</h3>
+			<div class="b-option-wrap">
+                <div class="dish-price">￥<span class="price">{{:~trans2yuan(price)}}</span>
+                    {{if dishUnit != ''}}
+                    <span class="dish-unit">/{{:dishUnit}}</span>
+                    {{else}}
+                    <span class="dish-unit">/份</span>
+                    {{/if}}
+                    {{if dishAttrData.length > 0 || sideDishData.length > 0}}
+                    <span class="price-start">起</span>
+                    {{/if}}
+                </div>
+                <div class="dish-option">
+                    <span class="icon-option icon-add"></span>
+                    <span class="dish-num hidden">0</span>
+                    <span class="icon-option icon-subtract hidden"></span>
+                    <div class="add-dish"></div>
+                    <div class="subtract-dish hidden"></div>
+                </div>
+            </div>
+		</div>
+	</li>
+</script>
+<script id="bigImgHasImg" type="text/x-jsrender">
+
+	<li id="b_{{:rowIndex}}" data-dish_id="{{:dishId}}"
+	    data-group_name="{{:groupName}}" data-dish_name="{{:dishName}}"
+	    {{if dishAttrData.length > 0 || sideDishData.length > 0}}
+                data-option = "1"
+        {{else}}
+                data-option = "0"
+        {{/if}}
+		 data-price="{{:~trans2yuan(price)}}"
+		 {{if #index/2 == 0}}
+		 class="b-dish-info dish-item left"
+		 {{else}}
+		 class="b-dish-info dish-item right"
+		 {{/if}}
+		 >
+		 {{if dishPic != ""}}
+		<div class="b-img">
+			<img class="b-Image scroll-loading"
+			src="../images/s-wait.png"
+			 data-original="{{:~imgPath(dishPic)}}"/>
+		</div>
+		{{/if}}
+		<div class="b-dish-letter">
+			<h3 class="b-dish-name ell">{{:dishName}}</h3>
+			{{if dishAttrData.length > 0 || sideDishData.length > 0}}
+			<div class="chooseNum">已选10</div>
+			{{/if}}
+			<div class="b-option-wrap">
+                <div class="dish-price">￥<span class="price">{{:~trans2yuan(price)}}</span>
+                    {{if dishUnit != ''}}
+                    <span class="dish-unit">/{{:dishUnit}}</span>
+                    {{else}}
+                    <span class="dish-unit">/份</span>
+                    {{/if}}
+                    {{if dishAttrData.length > 0 || sideDishData.length > 0}}
+                    <span class="price-start">起</span>
+                    {{/if}}
+                </div>
+                <div class="dish-option">
+                    <span class="icon-option icon-add"></span>
+                    <span class="dish-num hidden">0</span>
+                    <span class="icon-option icon-subtract hidden"></span>
+                    <div class="add-dish"></div>
+                    <div class="subtract-dish"></div>
+                </div>
+            </div>
+		</div>
+	</li>
+</script>
+</body>
+</html>

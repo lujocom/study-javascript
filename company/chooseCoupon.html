@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>选择优惠券</title>
+    <meta name="viewport"
+          content="width=device-width,height=device-height, user-scalable=no,initial-scale=1, minimum-scale=1, maximum-scale=1,target-densitydpi=device-dpi "/>
+    <link rel="stylesheet" href="../css/chooseCoupon.css"/>
+</head>
+<body>
+<header class="header color1">
+    <div class="backicon" onclick=""></div>
+    <span>优惠券</span>
+
+    <div class="choose-sure" onclick="">确定(2)</div>
+</header>
+<div class="choose-container">
+    <div class="choose-remind">
+        <span class="remind"></span>
+        <span>查看店内最新活动</span>
+    </div>
+    <div class="coupon-list-container">
+        <div class="coupon-tab">以下优惠可同时使用</div>
+        <div id="selectMore" class="coupon-list">
+            <div class="coupon-item">
+                <div class="coupon-img">
+                    <img src="../images/mo22.png">
+                </div>
+                <div class="coupon-content">
+                    <div class="coupon-title">中秋大回馈,购物返20元现金啦啦啦啦啦啦啦啦啦啦</div>
+                    <div class="coupon-detail">50元代金券</div>
+                    <div class="coupon-choose">
+                        <span class="choose-ok"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="coupon-item">
+                <div class="coupon-img">
+                    <img src="../images/mo22.png">
+                </div>
+                <div class="coupon-content">
+                    <div class="coupon-title">中秋大回馈,购物返20元现金啦啦啦啦啦啦啦啦啦啦</div>
+                    <div class="coupon-detail">50元代金券</div>
+                    <div class="coupon-choose">
+                        <span class="choose-ok"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="coupon-tab">以下优惠只能选择其一</div>
+        <div id="selectOne" class="coupon-list">
+            <div class="coupon-item">
+                <div class="coupon-img">
+                    <img src="../images/mo22.png">
+                </div>
+                <div class="coupon-content">
+                    <div class="coupon-title">中秋大回馈,购物返20元现金啦啦啦啦啦啦啦啦啦啦</div>
+                    <div class="coupon-detail">50元代金券</div>
+                    <div class="coupon-choose">
+                        <span class="choose-ok"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="coupon-item">
+                <div class="coupon-img">
+                    <img src="../images/mo22.png">
+                </div>
+                <div class="coupon-content">
+                    <div class="coupon-title">中秋大回馈,购物返20元现金啦啦啦啦啦啦啦啦啦啦</div>
+                    <div class="coupon-detail">50元代金券</div>
+                    <div class="coupon-choose">
+                        <span class="choose-no"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../lib/jquery-1.11/jquery-1.11.1.min.js"></script>
+<script>
+    $(function () {
+        $('#selectMore').find('.coupon-choose').on('click', function () {
+            var $this = $(this), data = $this.data(), $span = $this.find('span');
+            if (!data.select || data.select == 0) {
+                $span.addClass('choose-no').removeClass('choose-ok');
+                $this.data('select', 1);
+            } else {
+                $span.addClass('choose-ok').removeClass('choose-no');
+                $this.data('select', 0);
+            }
+        });
+
+        $('#selectOne').find('.coupon-choose').on('click', function () {
+            var $this = $(this), $span = $this.find('span'),
+                $couponSelect = $('#selectOne').find('span.choose-ok');
+
+            $couponSelect.addClass('choose-no').removeClass('choose-ok');
+            $span.addClass('choose-ok').removeClass('choose-no');
+
+
+
+        });
+    })
+</script>
+</body>
+</html>

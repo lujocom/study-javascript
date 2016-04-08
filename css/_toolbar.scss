@@ -23,7 +23,7 @@ $toolbar-position-right : 50%;
     display: block;
     width: $toolbar-size;
     height: $toolbar-size;
-    margin-top: 1px;
+    margin-top: 10px;
     @include transition(background-position 1s);
     &:hover {
         .toolbar-layer {

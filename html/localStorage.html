@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport"/>
+
+    <title>ceshi </title>
+    <script src="../lib/jquery-1.11/jquery-1.11.1.min.js"></script>
+
+    <script type="text/javascript">
+        function saveJson2LocalStorage(key, value){
+            if(localStorage){
+                localStorage.setItem(key, JSON.stringify(value));
+            }
+        }
+
+        function getFromLocalStorage(key){
+            if(localStorage){
+                var value =  localStorage.getItem(key);
+                if(!!value && $.trim(value) != ''){
+                    return JSON.parse(value);
+                }
+                return null;
+            }
+            return null;
+        }
+
+        function removeFromLocalStorage(key){
+            localStorage.removeItem(key);
+        }
+
+        $(function () {
+
+            var a = [1,2,34,4];
+            saveJson2LocalStorage('a', a);
+            console.log(getFromLocalStorage('a'));
+
+            var b = "hello world";
+
+            saveJson2LocalStorage('b', b);
+            console.log(getFromLocalStorage('b'));
+
+            removeFromLocalStorage('c');
+            removeFromLocalStorage('b');
+
+            console.log(getFromLocalStorage('b'));
+
+
+        });
+
+
+
+
+    </script>
+</head>
+<body>
+
+
+
+
+
+</body>
+</html>

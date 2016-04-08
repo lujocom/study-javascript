@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0"/>
+    <script src="../lib/jquery-1.11/jquery-1.11.1.min.js"></script>
+    <title>宽度测试</title>
+    <style>
+        .width{
+            width: 300px;
+            height: 40px;
+            display: none;
+        }
+        .money {
+            font-size: 32px;
+            padding: 5px 5px;
+            /*line-height: 32px;*/
+            border: 0;
+            /*display: inline-block;*/
+            /*display: none;*/
+        }
+         input {
+            font-size: 32px;
+            /*min-width: 92px;*/
+            /*width: 91px;*/
+            padding: 5px 5px;
+            border: 0;
+            text-align: center;
+            line-height: 32px;
+            height: 42px;
+        }
+    </style>
+</head>
+<body>
+<div id="test" class="width">
+    hello
+</div>
+<input id="totalPrice" value="" size="3">
+<script>
+    $(function () {
+        console.log($('.width').outerWidth());
+
+        var textWidth = function (text) {
+            $('.money').remove();
+            var sensor = $('<pre class="money">'+text+'</pre>' ).css({'display':'none'});
+            $('body').append(sensor);
+            var width = sensor.outerWidth();
+            console.log(width);
+//            sensor.remove();
+            return width;
+        };
+        var bindAutoWidth = function (inputId) {
+
+            $("#" + inputId).unbind('keydown').bind('keydown', function (e) {
+                var $this = $(this);
+//            console.log('down');
+                var keyCode = e.keyCode;
+                var value = $this.val();
+                var dotIndex = value.indexOf('.');
+                // Backspace键
+                if (keyCode == 8)
+                    return true;
+                //输入内容中不包含小数点
+                if(keyCode == 190 && dotIndex < 0){
+                    return true;
+                }
+
+            }).bind('keyup', function (e) {
+                var $this = $(this);
+                /*var size = $this.val().length;
+                $this.attr("size",size);*/
+                $('#totalPrice').outerWidth(textWidth($('#totalPrice').val()));
+            });
+
+        };
+        $('#totalPrice').val(0.01);
+        $('#totalPrice').outerWidth(textWidth($('#totalPrice').val()));
+        bindAutoWidth('totalPrice');//钱数输入框宽度随内容自适应
+
+    });
+
+</script>
+</body>
+</html>

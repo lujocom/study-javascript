@@ -1,0 +1,247 @@
+<!DOCTYPE HTML>
+<html>
+	<meta name="viewport"
+          content="width=device-width,minimum-scale=1.0,maximum-scale=1.0"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <head>
+    	<title>轮播大图</title>
+ <style type="text/css">
+ body{
+ 	margin:0px;
+ 	padding:0px;
+ }
+ 
+ .container{
+ 	width: 100%;
+ 	height:100%;
+ 	background-color: #FFD9B4;
+ 	position: absolute;
+ }
+ 
+ .item{
+ 	/*height: 200px;*/
+ 	width: 89%;
+ 	background-color: #FFFFFF;
+ 	position: absolute;
+ 	left: 4%;
+ 	top:10%;
+ 	bottom:20%;
+ 	z-index: 3;
+ 	display:none;
+ }
+ .item2{
+ 	width: 89%;
+ 	background-color: #FFFFFF;
+ 	position: absolute;
+ 	top:10%;
+ 	bottom:20%;
+ 	z-index: 5;
+ 	display:none;
+ 	
+ }
+ .active{
+ 	display:block;
+ 	z-index: 4;
+ }
+ .dish_img{
+ 	width: 100%;
+ 	height: 80%;
+ }
+ .foot{
+ 	position: absolute;
+ 	z-index: 4;
+ 	background-color: #FFFFFF;
+ 	width: 100%;
+ 	height: 9%;
+ 	bottom: 0;
+ }
+ .shadow1{
+ 	/*
+ 	 * 阴影1
+ 	 */
+ 	display:block;
+ 	background-color: #F6F6F6;
+ 	left: 5.5%;
+ 	top:11%;
+ 	bottom:19%;
+ 	z-index:2;
+ 	
+ }
+  .shadow2{
+ 	/*
+ 	 * 阴影2
+ 	 */
+ 	display:block;
+ 	background-color: #EFEEEE;
+ 	left: 6.7%;
+ 	top:12.3%;
+ 	bottom:18%;
+ 	z-index:1;
+ 	
+ }
+ .only_one{
+ 	display:block;
+ 	z-index: 4;
+ }
+ .close{
+ 	position:absolute;
+ 	z-index:4;
+ 	top:3%;
+ 	/*left: 88%;*/
+ 	right: 0;
+ 	
+ }
+ .close_icon{
+ 	position:relative;
+ 	
+ 	right: -15%;
+ }
+</style>
+<script type="text/javascript" charset="utf-8" src="../lib/jquery-1.11/jquery-1.11.1.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	var start_now_X = 0;
+	var start_now_Y = 0;
+	var end_now_X = 0;
+	var end_now_Y = 0;
+	var now_X = 0;
+	var doc_W = $(document).width();
+	var temp_X = 0;//每一个瞬间的x坐标
+	 
+	var now_page_index = 0;
+	var next_index;//下一张的编号
+	var pre_index;//上一张编号
+	var json_array = [
+	{'url':'img/1.jpg','dish_name':'小炒肉','price':'20.0'},
+	{'url':'img/2.jpg','dish_name':'水煮肉','price':'30.0'},
+	{'url':'img/3.jpg','dish_name':'木须肉','price':'35.0'},
+	{'url':'img/4.jpg','dish_name':'清蒸鱼','price':'36.0'},
+	{'url':'img/5.jpg','dish_name':'酸菜鱼','price':'38.0'}
+	];
+	init(json_array,2);
+	function init(json_array,begin_index){//begin_index指的是开始下标，从0开始
+		//如果只有一张图片，禁止滑动
+		if(json_array.length==1){
+			var html = "<div class='item only_one'>"+
+					"<div class='dish_img'><img src='"+json_array[0].url+"' style='width: 100%;height: 100%;'/></div>"+
+					"<div>第1张</div>"+
+					"</div>";
+		    $(".container").append(html);
+		}else{
+			$.each(json_array,function(index,obj){
+				var index_class = "index"+index;
+				var item2_index_class = "item2_index"+index;
+				if(index==begin_index){
+					//默认第一张激活状态
+					var html = "<div data-index='"+index+"' class='item active "+index_class+"'>"+
+					"<div class='dish_img'><img src='"+obj.url+"' style='width: 100%;height: 100%;'/></div>"+
+					"<div>第"+(index+1)+"张</div>"+
+					"</div>";
+					$(".container").append(html);
+					var html2 = "<div data-index='"+index+"' class='item2 "+item2_index_class+"'>"+
+					"<div class='dish_img'><img src='"+obj.url+"' style='width: 100%;height: 100%;'/></div>"+
+					"<div>第"+(index+1)+"张</div>"+
+					"</div>";
+					$(".container").append(html2);
+				}else{
+					var html = "<div data-index='"+index+"' class='item "+index_class+"'>"+
+					"<div class='dish_img'><img src='"+obj.url+"' style='width: 100%;height: 100%;'/></div>"+
+					"<div>第"+(index+1)+"张</div>"+
+					"</div>";
+					$(".container").append(html);
+					var html2 = "<div data-index='"+index+"' class='item2 "+item2_index_class+"'>"+
+					"<div class='dish_img'><img src='"+obj.url+"' style='width: 100%;height: 100%;'/></div>"+
+					"<div>第"+(index+1)+"张</div>"+
+					"</div>";
+					$(".container").append(html2);
+				}
+			});
+			}
+		
+		$(".item2").css("left",-($(".item2").width()));
+	}
+    var heiden_left = -($('.item2').width());//这个地方有点开挂了，但是不知道为什么offset().left取到的值一直是0
+    var before_move_X = $(".active").offset().left;
+    $(document).on("touchstart",".active",function(event){
+    	event.preventDefault();
+    	start_now_X = event.originalEvent.targetTouches[0].pageX; 
+    	temp_X = start_now_X;
+    	
+    });
+    $(document).on("touchend",".active",function(event){
+    	event.preventDefault();
+    	end_now_X = event.originalEvent.changedTouches[0].pageX; 
+    	var sub_X = end_now_X-start_now_X;//坐标差
+    	var div_W = $(".active").width();
+    	if(end_now_X-start_now_X<0&&Math.abs(sub_X)*2>=doc_W){
+    			$(".active").hide();
+    			$(".active").css("left","4%");
+    			$(".active").removeClass("active");
+    			$(".index"+next_index).addClass("active");
+    	}else if(end_now_X-start_now_X>0&&Math.abs(sub_X)*2>=doc_W){
+    		console.log("右移超过百分之五十。。。");
+    		//下面偷梁换柱,王车易位
+    		$(".active").removeClass("active");
+    		$(".item2_index"+pre_index).addClass("active").removeClass("item2_index"+pre_index).removeClass("item2");
+    		$(".index"+pre_index).addClass("item2_index"+pre_index).addClass("item2").removeClass("item").removeClass("index"+pre_index).css("left",-($('.active').width()));
+    		$(".active").addClass("item").addClass("index"+pre_index).css("left","4%");
+    		
+    	}else{
+    		$(".active").css("left",before_move_X);
+    		$(".item2").css("left",-($(".item2").width()));
+    	}
+    	
+    	
+    });
+    $(document).on("touchmove",".active",function(event){
+    	event.preventDefault();
+    	now_X = event.originalEvent.targetTouches[0].pageX; 
+    	
+    	var now_index = parseInt($(".active").attr("data-index"));
+    	
+    		if(now_X-start_now_X<0){
+    			$(".active").css("left",now_X-start_now_X);
+    			//往左滑动，显示下一张
+	    		if(now_index==(json_array.length-1)){
+	    			var fast_index = 0;
+	    			$(".index"+fast_index).show();
+	    			next_index = 0;
+	    		}else{
+	    			$(".index"+(now_index+1)).show();
+	    			next_index = now_index+1;
+	    		}
+    		}else{
+    			if($(".active").offset().left>=before_move_X){
+    				if(now_index==0){
+    					pre_index = json_array.length-1;
+    				}else{
+    					pre_index = now_index-1;
+    				}
+    				$(".item2_index"+pre_index).show();
+    				$(".item2_index"+pre_index).css("left",heiden_left+(now_X-start_now_X));
+    			}else{
+    				$(".active").css("left",now_X-start_now_X);
+    			}
+    		}
+    		
+    });
+ });
+</script>
+</head>
+ 
+<body>
+	<div class="container">
+		<div class="close">
+			<img class="close_icon" src="img/close.png" style="width: 65%;height: 65%;"/>
+		</div>
+		
+		<div class="item shadow1">
+		</div>
+		<div class="item shadow2">
+		</div>
+	</div>
+	<div class="foot">
+		
+	</div>
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../lib/jquery-1.11/jquery-1.11.1.min.js"></script>
+    <script src="../lib/jsRander/jsrander.min.js"></script>
+    <style>
+        .hello{
+            background: red;
+        }
+        .hello2{
+            background: bisque;
+        }
+        .hello3{
+            background: blue;
+        }
+    </style>
+    <script>
+        var data = {"hello":"world"};
+        var data2 = {"returnCode":"00","showPicMod":"2","dishMenu":[{"className":"DishGroup","createTime":"2015-12-19 02:42:13","dishGroupId":"7723ed34e925439c873ff107f1f2782d","dishGroupName":"店长推荐","dishes":[{"className":"Dish","createTime":"","dishBigPic":"resource\/image\/defaultPic\/defaultEntPic.s600.png","dishId":"4d3474922c5640c180ad5e7c3c01ec3a","dishInfo":"","dishName":"红烧狮子头","dishNo":"37","dishPic":"resource\/image\/defaultPic\/defaultEntPic.s200.png","entId":"","entityDescription":"菜品表","isSale":"","objectDescription":"菜品表【4d3474922c5640c180ad5e7c3c01ec3a】","objectID":"4d3474922c5640c180ad5e7c3c01ec3a","objectName":"dish","price":"3000","sort":25,"updateTime":""}],"entId":"1433487834831","entityDescription":"菜品类别表","groupType":0,"objectDescription":"菜品类别表【7723ed34e925439c873ff107f1f2782d】","objectID":"7723ed34e925439c873ff107f1f2782d","objectName":"dishGroup","sort":5,"updateTime":"2015-12-19 02:42:13"},{"className":"DishGroup","createTime":"2015-11-15 10:57:37","dishGroupId":"f0683984dca846088f90e4c707077dd7","dishGroupName":"西北菜","dishes":[{"className":"Dish","createTime":"","dishBigPic":"resource\/image\/picLib\/img-3.s600.png","dishId":"fd675d9fd7aa49d8ae109b11c48503c6","dishInfo":"测试3-2","dishName":"土豆丝","dishNo":"2","dishPic":"resource\/image\/picLib\/img-3.s200.png","entId":"","entityDescription":"菜品表","isSale":"","objectDescription":"菜品表【fd675d9fd7aa49d8ae109b11c48503c6】","objectID":"fd675d9fd7aa49d8ae109b11c48503c6","objectName":"dish","price":15,"sort":6,"updateTime":""},{"className":"Dish","createTime":"","dishBigPic":"resource\/image\/picLib\/258b14c1b1a946ac87d953f18afdc9e8\/e74ec57676dd4292aaa23efd4e76252a.s600.jpg","dishId":"5832584e0b2b48df9afd18ba4d89d4da","dishInfo":"这个大盘鸡不得了嘞！！！","dishName":"大盘鸡","dishNo":"3","dishPic":"resource\/image\/picLib\/258b14c1b1a946ac87d953f18afdc9e8\/e74ec57676dd4292aaa23efd4e76252a.s200.jpg","entId":"","entityDescription":"菜品表","isSale":"","objectDescription":"菜品表【5832584e0b2b48df9afd18ba4d89d4da】","objectID":"5832584e0b2b48df9afd18ba4d89d4da","objectName":"dish","price":100,"sort":2,"updateTime":""},{"className":"Dish","createTime":"","dishBigPic":"resource\/image\/defaultPic\/defaultEntPic.s600.png","dishId":"e8992036fa4d4f44a0dbbef2d7436143","dishInfo":"","dishName":"卤牛肉","dishNo":"17","dishPic":"resource\/image\/defaultPic\/defaultEntPic.s200.png","entId":"","entityDescription":"菜品表","isSale":"","objectDescription":"菜品表【e8992036fa4d4f44a0dbbef2d7436143】","objectID":"e8992036fa4d4f44a0dbbef2d7436143","objectName":"dish","price":50,"sort":10,"updateTime":""},{"className":"Dish","createTime":"","dishBigPic":"resource\/image\/defaultPic\/defaultEntPic.s600.png","dishId":"511922a3d58e4f218b617ad619ecc80d","dishInfo":"","dishName":"烤羊肉串","dishNo":"19","dishPic":"resource\/image\/defaultPic\/defaultEntPic.s200.png","entId":"","entityDescription":"菜品表","isSale":"","objectDescription":"菜品表【511922a3d58e4f218b617ad619ecc80d】","objectID":"511922a3d58e4f218b617ad619ecc80d","objectName":"dish","price":3,"sort":11,"updateTime":""},{"className":"Dish","createTime":"","dishBigPic":"entResources\/images\/1433487834831\/ME_aba848e3-cd91-4ec3-ad26-7f41aeb3dda2.s600.jpeg","dishId":"4d4532504f42481ba39462603a9bac97","dishInfo":"","dishName":"孜然脆骨","dishNo":"1","dishPic":"entResources\/images\/1433487834831\/ME_aba848e3-cd91-4ec3-ad26-7f41aeb3dda2.s200.jpeg","entId":"","entityDescription":"菜品表","isSale":"","objectDescription":"菜品表【4d4532504f42481ba39462603a9bac97】","objectID":"4d4532504f42481ba39462603a9bac97","objectName":"dish","price":79,"sort":4,"updateTime":""},{"className":"Dish","createTime":"","dishBigPic":"entResources\/images\/1433487834831\/ME_187b1667-dd2b-4427-8f1b-a0532b4a9708.s600.jpeg","dishId":"ad4de0cdd221409f88bcf326eab73f21","dishInfo":"","dishName":"孜然羊肉","dishNo":"1","dishPic":"entResources\/images\/1433487834831\/ME_187b1667-dd2b-4427-8f1b-a0532b4a9708.s200.jpeg","entId":"","entityDescription":"菜品表","isSale":"","objectDescription":"菜品表【ad4de0cdd221409f88bcf326eab73f21】","objectID":"ad4de0cdd221409f88bcf326eab73f21","objectName":"dish","price":80,"sort":3,"updateTime":""},{"className":"Dish","createTime":"","dishBigPic":"","dishId":"c74ee96dfd2d4215a2e45445de7cdcf8","dishInfo":"将排骨腌制过夜，这样味道足。如果时间紧的话，至少也要腌2个小时，并不断搓揉，确保入味。用锡箔纸包排骨的时候，要小心些，不要让锡箔纸破了，影响效果。也可以不用锡箔纸包住，而是直接入烤架上烤。前者排骨容易烂，入味；后者则有嚼劲。看个人喜好。如果用烤架烤，排骨可以分开，一根根独立烤，如此比较省时。","dishName":"孜然烤排骨","dishNo":"","dishPic":"","entId":"","entityDescription":"菜品表","isSale":"","objectDescription":"菜品表【c74ee96dfd2d4215a2e45445de7cdcf8】","objectID":"c74ee96dfd2d4215a2e45445de7cdcf8","objectName":"dish","price":5000,"sort":26,"updateTime":""}],"entId":"1433487834831","entityDescription":"菜品类别表","groupType":0,"objectDescription":"菜品类别表【f0683984dca846088f90e4c707077dd7】","objectID":"f0683984dca846088f90e4c707077dd7","objectName":"dishGroup","sort":0,"updateTime":"2015-11-15 10:57:37"},{"className":"DishGroup","createTime":"2015-11-26 21:33:04","dishGroupId":"5833e087d0b9426ca673ebb2f35c09c6","dishGroupName":"零食","dishes":[{"className":"Dish","createTime":"","dishBigPic":"resource\/image\/defaultPic\/defaultEntPic.s600.png","dishId":"5405c0da20fc463fb057e73e88703821","dishInfo":"","dishName":"凉皮","dishNo":"20","dishPic":"resource\/image\/defaultPic\/defaultEntPic.s200.png","entId":"","entityDescription":"菜品表","isSale":"","objectDescription":"菜品表【5405c0da20fc463fb057e73e88703821】","objectID":"5405c0da20fc463fb057e73e88703821","objectName":"dish","price":8,"sort":13,"updateTime":""}],"entId":"1433487834831","entityDescription":"菜品类别表","groupType":0,"objectDescription":"菜品类别表【5833e087d0b9426ca673ebb2f35c09c6】","objectID":"5833e087d0b9426ca673ebb2f35c09c6","objectName":"dishGroup","sort":0,"updateTime":"2015-11-26 21:33:04"},{"className":"DishGroup","createTime":"2015-12-19 02:34:10","dishGroupId":"7e20f92d3a284a58a1ef633526c7aa1f","dishGroupName":"套餐一","dishes":[{"className":"Dish","createTime":"","dishBigPic":"resource\/image\/defaultPic\/defaultEntPic.s600.png","dishId":"18af3b5c271b4661a7a2bae2186db0c9","dishInfo":"","dishName":"羊肉一斤 羊肠羊肚羊肺各一份 指定素菜3份 特色羊肉串6串","dishNo":"80","dishPic":"resource\/image\/defaultPic\/defaultEntPic.s200.png","entId":"","entityDescription":"菜品表","isSale":"","objectDescription":"菜品表【18af3b5c271b4661a7a2bae2186db0c9】","objectID":"18af3b5c271b4661a7a2bae2186db0c9","objectName":"dish","price":16800,"sort":14,"updateTime":""}],"entId":"1433487834831","entityDescription":"菜品类别表","groupType":0,"objectDescription":"菜品类别表【7e20f92d3a284a58a1ef633526c7aa1f】","objectID":"7e20f92d3a284a58a1ef633526c7aa1f","objectName":"dishGroup","sort":0,"updateTime":"2015-12-19 02:34:10"},{"className":"DishGroup","createTime":"2015-12-19 02:34:10","dishGroupId":"2c7a752d8d66458fa5a067ad7905427a","dishGroupName":"套餐五","dishes":[{"className":"Dish","createTime":"","dishBigPic":"resource\/image\/defaultPic\/defaultEntPic.s600.png","dishId":"179b38a938a741ecbc311c7d315f6ff8","dishInfo":"","dishName":"羊肉半斤 羊肺羊肚各一份 指定素菜4份 特色羊肉串4串","dishNo":"84","dishPic":"resource\/image\/defaultPic\/defaultEntPic.s200.png","entId":"","entityDescription":"菜品表","isSale":"","objectDescription":"菜品表【179b38a938a741ecbc311c7d315f6ff8】","objectID":"179b38a938a741ecbc311c7d315f6ff8","objectName":"dish","price":12000,"sort":18,"updateTime":""}],"entId":"1433487834831","entityDescription":"菜品类别表","groupType":0,"objectDescription":"菜品类别表【2c7a752d8d66458fa5a067ad7905427a】","objectID":"2c7a752d8d66458fa5a067ad7905427a","objectName":"dishGroup","sort":1,"updateTime":"2015-12-19 02:34:10"},{"className":"DishGroup","createTime":"2015-12-19 02:34:10","dishGroupId":"34f1d3725b814d06b50f3d511bb39454","dishGroupName":"套餐二","dishes":[{"className":"Dish","createTime":"","dishBigPic":"resource\/image\/defaultPic\/defaultEntPic.s600.png","dishId":"244a4725f6894e7a903f48a8ad14ec40","dishInfo":"","dishName":"羊肉半斤 羊肺羊肚各一份 指定素菜2份 特色羊肉串4串","dishNo":"81","dishPic":"resource\/image\/defaultPic\/defaultEntPic.s200.png","entId":"","entityDescription":"菜品表","isSale":"","objectDescription":"菜品表【244a4725f6894e7a903f48a8ad14ec40】","objectID":"244a4725f6894e7a903f48a8ad14ec40","objectName":"dish","price":8000,"sort":15,"updateTime":""}],"entId":"1433487834831","entityDescription":"菜品类别表","groupType":0,"objectDescription":"菜品类别表【34f1d3725b814d06b50f3d511bb39454】","objectID":"34f1d3725b814d06b50f3d511bb39454","objectName":"dishGroup","sort":1,"updateTime":"2015-12-19 02:34:10"},{"className":"DishGroup","createTime":"2015-12-19 02:34:10","dishGroupId":"3db6d6dae35f4aef8609d6d71bd77933","dishGroupName":"套餐四","dishes":[{"className":"Dish","createTime":"","dishBigPic":"resource\/image\/defaultPic\/defaultEntPic.s600.png","dishId":"a097199947fa411bb624eafb169250d4","dishInfo":"","dishName":"羊肉半斤 羊肺羊肚各一份 指定素菜3份 特色羊肉串6串","dishNo":"83","dishPic":"resource\/image\/defaultPic\/defaultEntPic.s200.png","entId":"","entityDescription":"菜品表","isSale":"","objectDescription":"菜品表【a097199947fa411bb624eafb169250d4】","objectID":"a097199947fa411bb624eafb169250d4","objectName":"dish","price":10000,"sort":17,"updateTime":""}],"entId":"1433487834831","entityDescription":"菜品类别表","groupType":0,"objectDescription":"菜品类别表【3db6d6dae35f4aef8609d6d71bd77933】","objectID":"3db6d6dae35f4aef8609d6d71bd77933","objectName":"dishGroup","sort":1,"updateTime":"2015-12-19 02:34:10"},{"className":"DishGroup","createTime":"2015-12-19 02:34:10","dishGroupId":"4753a1566857476ab2dc2b01e9974415","dishGroupName":"套餐三","dishes":[{"className":"Dish","createTime":"","dishBigPic":"Picture_Resource\/defaultPic\/defaultEntPic.s600.png","dishId":"8a4a5feb91fa40999b10a74a05854502","dishInfo":"","dishName":"羊肉半斤 羊肺羊肚各一份 指定素菜2份 特色羊肉串5串","dishNo":"82","dishPic":"Picture_Resource\/defaultPic\/defaultEntPic.s200.png","entId":"","entityDescription":"菜品表","isSale":"","objectDescription":"菜品表【8a4a5feb91fa40999b10a74a05854502】","objectID":"8a4a5feb91fa40999b10a74a05854502","objectName":"dish","price":9000,"sort":16,"updateTime":""}],"entId":"1433487834831","entityDescription":"菜品类别表","groupType":0,"objectDescription":"菜品类别表【4753a1566857476ab2dc2b01e9974415】","objectID":"4753a1566857476ab2dc2b01e9974415","objectName":"dishGroup","sort":1,"updateTime":"2015-12-19 02:34:10"},{"className":"DishGroup","createTime":"2015-11-15 10:57:37","dishGroupId":"b3287f2b909141f98c8db2011a8b24eb","dishGroupName":"川菜","dishes":[{"className":"Dish","createTime":"","dishBigPic":"resource\/image\/picLib\/img-3.s600.png","dishId":"fd675d9fd7aa49d8ae109b11c48503c6","dishInfo":"测试3-2","dishName":"土豆丝","dishNo":"2","dishPic":"resource\/image\/picLib\/img-3.s200.png","entId":"","entityDescription":"菜品表","isSale":"","objectDescription":"菜品表【fd675d9fd7aa49d8ae109b11c48503c6】","objectID":"fd675d9fd7aa49d8ae109b11c48503c6","objectName":"dish","price":15,"sort":6,"updateTime":""},{"className":"Dish","createTime":"","dishBigPic":"resource\/image\/picLib\/6997112d215e4f5a8f3da2111a2b9752\/d94440f46fcf4c3c896dee721eff9406.s600.jpg","dishId":"c30d8f85da1849af849b34328614e7cc","dishInfo":"","dishName":"夫妻肺片","dishNo":"18","dishPic":"resource\/image\/picLib\/6997112d215e4f5a8f3da2111a2b9752\/d94440f46fcf4c3c896dee721eff9406.s200.jpg","entId":"","entityDescription":"菜品表","isSale":"","objectDescription":"菜品表【c30d8f85da1849af849b34328614e7cc】","objectID":"c30d8f85da1849af849b34328614e7cc","objectName":"dish","price":28,"sort":12,"updateTime":""},{"className":"Dish","createTime":"","dishBigPic":"entResources\/images\/1433487834831\/ME_abff0f47-f93d-4958-be18-60af16c1ddba.s600.jpeg","dishId":"4f04729d73f14aa4b5e9be7f7da3b88e","dishInfo":"","dishName":"西红柿炒鸡蛋","dishNo":"11","dishPic":"entResources\/images\/1433487834831\/ME_abff0f47-f93d-4958-be18-60af16c1ddba.s200.jpeg","entId":"","entityDescription":"菜品表","isSale":"","objectDescription":"菜品表【4f04729d73f14aa4b5e9be7f7da3b88e】","objectID":"4f04729d73f14aa4b5e9be7f7da3b88e","objectName":"dish","price":15,"sort":8,"updateTime":""},{"className":"Dish","createTime":"","dishBigPic":"entResources\/images\/1433487834831\/ME_604eb3d3-5d97-4128-ae76-f88027d707e9.s600.jpeg","dishId":"169cfd9e12ad425ca1d262bf1739332c","dishInfo":"","dishName":"东坡肘子","dishNo":"1","dishPic":"entResources\/images\/1433487834831\/ME_604eb3d3-5d97-4128-ae76-f88027d707e9.s200.jpeg","entId":"","entityDescription":"菜品表","isSale":"","objectDescription":"菜品表【169cfd9e12ad425ca1d262bf1739332c】","objectID":"169cfd9e12ad425ca1d262bf1739332c","objectName":"dish","price":0,"sort":5,"updateTime":""},{"className":"Dish","createTime":"","dishBigPic":"entResources\/images\/1433487834831\/ME_4c0a528d-c178-4057-ae59-93f641b93038.s600.jpg","dishId":"8df7ece789dd41a29b7dc769c67c2ec6","dishInfo":"","dishName":"麻婆豆腐","dishNo":"12","dishPic":"entResources\/images\/1433487834831\/ME_4c0a528d-c178-4057-ae59-93f641b93038.s200.jpg","entId":"","entityDescription":"菜品表","isSale":"","objectDescription":"菜品表【8df7ece789dd41a29b7dc769c67c2ec6】","objectID":"8df7ece789dd41a29b7dc769c67c2ec6","objectName":"dish","price":10,"sort":7,"updateTime":""}],"entId":"1433487834831","entityDescription":"菜品类别表","groupType":0,"objectDescription":"菜品类别表【b3287f2b909141f98c8db2011a8b24eb】","objectID":"b3287f2b909141f98c8db2011a8b24eb","objectName":"dishGroup","sort":1,"updateTime":"2015-11-15 10:57:37"},{"className":"DishGroup","createTime":"2015-12-19 02:38:30","dishGroupId":"57c2b54b555644daa203a52d3db4eccc","dishGroupName":"酒水","dishes":[{"className":"Dish","createTime":"","dishBigPic":"resource\/image\/defaultPic\/defaultEntPic.s600.png","dishId":"151acc0de0c44c7cb18805d48ad33c98","dishInfo":"","dishName":"勇闯天涯","dishNo":"30","dishPic":"resource\/image\/defaultPic\/defaultEntPic.s200.png","entId":"","entityDescription":"菜品表","isSale":"","objectDescription":"菜品表【151acc0de0c44c7cb18805d48ad33c98】","objectID":"151acc0de0c44c7cb18805d48ad33c98","objectName":"dish","price":800,"sort":19,"updateTime":""},{"className":"Dish","createTime":"","dishBigPic":"resource\/image\/defaultPic\/defaultEntPic.s600.png","dishId":"d2c27f60fdaa4514a5992c99f699a0ed","dishInfo":"","dishName":"雪花","dishNo":"31","dishPic":"resource\/image\/defaultPic\/defaultEntPic.s200.png","entId":"","entityDescription":"菜品表","isSale":"","objectDescription":"菜品表【d2c27f60fdaa4514a5992c99f699a0ed】","objectID":"d2c27f60fdaa4514a5992c99f699a0ed","objectName":"dish","price":500,"sort":20,"updateTime":""},{"className":"Dish","createTime":"","dishBigPic":"resource\/image\/defaultPic\/defaultEntPic.s600.png","dishId":"5c3d5aea4f28405c88d9d8f4bb1c081d","dishInfo":"","dishName":"江小白","dishNo":"33","dishPic":"resource\/image\/defaultPic\/defaultEntPic.s200.png","entId":"","entityDescription":"菜品表","isSale":"","objectDescription":"菜品表【5c3d5aea4f28405c88d9d8f4bb1c081d】","objectID":"5c3d5aea4f28405c88d9d8f4bb1c081d","objectName":"dish","price":1000,"sort":21,"updateTime":""}],"entId":"1433487834831","entityDescription":"菜品类别表","groupType":0,"objectDescription":"菜品类别表【57c2b54b555644daa203a52d3db4eccc】","objectID":"57c2b54b555644daa203a52d3db4eccc","objectName":"dishGroup","sort":2,"updateTime":"2015-12-19 02:38:30"},{"className":"DishGroup","createTime":"2015-12-19 02:38:48","dishGroupId":"f2a29bfeb1964e1781bcad5b526aeb3b","dishGroupName":"饮料","dishes":[{"className":"Dish","createTime":"","dishBigPic":"resource\/image\/defaultPic\/defaultEntPic.s600.png","dishId":"269589bd124949cdba26af3b9cd4c339","dishInfo":"","dishName":"雪碧（大）","dishNo":"34","dishPic":"resource\/image\/defaultPic\/defaultEntPic.s200.png","entId":"","entityDescription":"菜品表","isSale":"","objectDescription":"菜品表【269589bd124949cdba26af3b9cd4c339】","objectID":"269589bd124949cdba26af3b9cd4c339","objectName":"dish","price":1000,"sort":22,"updateTime":""},{"className":"Dish","createTime":"","dishBigPic":"resource\/image\/defaultPic\/defaultEntPic.s600.png","dishId":"1d5c4f9c968642e69415aac5a6d722a5","dishInfo":"","dishName":"王老吉（听装）","dishNo":"35","dishPic":"resource\/image\/defaultPic\/defaultEntPic.s200.png","entId":"","entityDescription":"菜品表","isSale":"","objectDescription":"菜品表【1d5c4f9c968642e69415aac5a6d722a5】","objectID":"1d5c4f9c968642e69415aac5a6d722a5","objectName":"dish","price":500,"sort":23,"updateTime":""}],"entId":"1433487834831","entityDescription":"菜品类别表","groupType":0,"objectDescription":"菜品类别表【f2a29bfeb1964e1781bcad5b526aeb3b】","objectID":"f2a29bfeb1964e1781bcad5b526aeb3b","objectName":"dishGroup","sort":3,"updateTime":"2015-12-19 02:38:48"},{"className":"DishGroup","createTime":"2015-12-19 02:41:34","dishGroupId":"b8d4e767dfb44907b760841f8e440fff","dishGroupName":"特色菜","dishes":[{"className":"Dish","createTime":"","dishBigPic":"resource\/image\/defaultPic\/defaultEntPic.s600.png","dishId":"547533ad8ed6437e84bd2c6bcd208455","dishInfo":"","dishName":"竹笋炒肉","dishNo":"36","dishPic":"resource\/image\/defaultPic\/defaultEntPic.s200.png","entId":"","entityDescription":"菜品表","isSale":"","objectDescription":"菜品表【547533ad8ed6437e84bd2c6bcd208455】","objectID":"547533ad8ed6437e84bd2c6bcd208455","objectName":"dish","price":2000,"sort":24,"updateTime":""},{"className":"Dish","createTime":"","dishBigPic":"resource\/image\/defaultPic\/defaultEntPic.s600.png","dishId":"4d3474922c5640c180ad5e7c3c01ec3a","dishInfo":"","dishName":"红烧狮子头","dishNo":"37","dishPic":"resource\/image\/defaultPic\/defaultEntPic.s200.png","entId":"","entityDescription":"菜品表","isSale":"","objectDescription":"菜品表【4d3474922c5640c180ad5e7c3c01ec3a】","objectID":"4d3474922c5640c180ad5e7c3c01ec3a","objectName":"dish","price":3000,"sort":25,"updateTime":""}],"entId":"1433487834831","entityDescription":"菜品类别表","groupType":0,"objectDescription":"菜品类别表【b8d4e767dfb44907b760841f8e440fff】","objectID":"b8d4e767dfb44907b760841f8e440fff","objectName":"dishGroup","sort":4,"updateTime":"2015-12-19 02:41:34"},{"className":"DishGroup","createTime":"2015-12-19 02:42:13","dishGroupId":"502cf8a8da7041e995af30fc1630b807","dishGroupName":"小编推荐","dishes":[{"className":"Dish","createTime":"","dishBigPic":"resource\/image\/defaultPic\/defaultEntPic.s600.png","dishId":"4d3474922c5640c180ad5e7c3c01ec3a","dishInfo":"","dishName":"红烧狮子头","dishNo":"37","dishPic":"resource\/image\/defaultPic\/defaultEntPic.s200.png","entId":"","entityDescription":"菜品表","isSale":"","objectDescription":"菜品表【4d3474922c5640c180ad5e7c3c01ec3a】","objectID":"4d3474922c5640c180ad5e7c3c01ec3a","objectName":"dish","price":3000,"sort":25,"updateTime":""}],"entId":"1433487834831","entityDescription":"菜品类别表","groupType":0,"objectDescription":"菜品类别表【502cf8a8da7041e995af30fc1630b807】","objectID":"502cf8a8da7041e995af30fc1630b807","objectName":"dishGroup","sort":5,"updateTime":"2015-12-19 02:42:13"}]};
+        var data3 = [{"hello":"world1", "hello2":{"hello3":[{"hello4":"world4"},{"hello4":"world4-2"}]}}];
+        $(function () {
+//            var dahtml = $("#tpl1").render(data);
+//            $("#da").append(dahtml);
+//            console.log($("#tpl2").render(data2));
+//            $("#da").append($("#tpl3").render(data2.dishMenu[1].dishes));
+//            console.log();
+//            console.log($("#tpl6").render(data2.dishMenu));
+//            console.log($("#tpl5").render(data3));
+//            console.log(data2.dishMenu.dishes);
+            $.views.helpers({
+                "trans2yuan" : function (price) {
+                    if($.isNumeric(price)){
+                        return parseFloat(price/100).toFixed(2);
+                    }else{
+                        return 0.00;
+                    }
+                }
+            });
+//            $("#da").append($("#tpl7").render(data2.dishMenu));
+            /*$("#da").append($("#dishListTpl").render(data2.dishMenu));
+            $("#da").append($("#groupList").render(data2.dishMenu));*/
+            var a = {"b":['21','23','44']};
+            console.log($('#shuzi').render(a));
+
+            var b = [{"dishName":"豆腐皮","num":2}], temp, dishInfo;
+
+            for(var i = 0; i < b.length; i++){
+                dishInfo = b[i];
+                if(dishInfo.num>1){
+                    temp = dishInfo.dishName + "x" + dishInfo.num
+                }else{
+                    temp = dishInfo.dishName;
+                }
+
+            }
+
+        })
+
+    </script>
+    <script id="tpl1" type="text/x-jsrender">
+        <div>{{:hello}}</div>
+    </script>
+    <script id="tpl2" type="text/x-jsrender">
+        <div>{{:returnCode}}</div>
+    </script>
+    <script id="tpl3" type="text/x-jsrender">
+        <div class="hello">{{:dishName}}</div>
+        <div class="hello2">{{:price}}</div>
+        <div class="hello3">{{:dishInfo}}</div>
+    </script>
+    <script id="tpl4" type="text/x-jsrender">
+        <div class="hello">{{:dishGroupName}}</div>
+    </script>
+    <script id="tpl5" type="text/x-jsrender">
+        <div class="hello">{{:hello}}</div>
+        {{for hello2.hello3}}
+             <div class="hello">{{:hello4}}</div>
+        {{/for}}
+    </script>
+    <script id="tpl6" type="text/x-jsrender">
+        <div class="hello">{{:dishGroupName}}</div>
+        {{for dishes}}
+             <div class="hello">{{:dishName}}</div>
+        {{/for}}
+    </script>
+    <script id="tpl7" type="text/x-jsrender">
+        <div class="hello" id="{{:index}}">{{:dishGroupName}}</div>
+        {{for dishes ~parentIndex=#index}}
+             <div class="hello" id="right_{{:~parentIndex}}_{{:#index}}">{{:dishName}}</div>
+             <div class="hello" >{{:~trans2yuan(price)}}</div>
+        {{/for}}
+    </script>
+    <script id="dishListTpl" type="text/x-jsrender">
+           <article class="dish-list" id="page{{:index}}">
+	<p class="meun-p">
+		<span class="menu-group">{{:dishGroupName}}</span>
+	</p>
+	<div class="my-rightdiv" id="{{:dishGroupId}}" data-group-type="{{:groupType}}">
+		{{for dishes ~parentIndex=#index}}
+			<div id="right_{{:~parentIndex}}_{{:#index}}" data-dish_id="{{:dishId}}" data-dish_name="{{:dishName}}" data-price="{{:~trans2yuan(price)}}" class="menu-cont clearfix">
+				<div class="menu-img">
+					<img class="center-img scroll-loading" style="" src="" data-original="{{:dishPic}}">
+				</div>
+				<div class="menu-cont-right">
+					<h3 class="menu-cont-title">{{:dishName}}</h3>
+					<p class="menu-cont-price1">
+						<em>￥</em><span>{{:~trans2yuan(price)}}</span>/份
+					</p>
+					<div class="menu-cont-check clearfix">
+						<span class="dish-plus mybgshow1"></span>
+						<span class="dish-dishnum none">0</span>
+						<span class="dish-jian none"></span>
+						<div class="adddish-add dish-list-add"></div>
+						<div class="dish-list-jian adddish-jian  none"></div>
+					</div>
+				</div>
+			</div>
+		{{/for}}
+	</div>
+    </article>
+    </script>
+
+    <script id="groupList" type="text/x-jsrender">
+        <li id="{{:rightId}}"
+        {{if index == 0}}
+        class="active"
+        {{/if}}
+        >
+            <a href="#page{{:index}}">
+            {{if dishGroupName == "店长推荐"}}
+                <span class="recommend"></span>
+            {{/if}}
+                <span style="margin-left: 17px">{{:dishGroupName}}</span>
+                <em class="dish-addnum none">0</em>
+            </a>
+        </li>
+    </script>
+    <script id="shuzi" type="text/x-jsrender">
+        {{for b}}
+        <a>{{:#data}}</a>
+        {{/for}}
+    </script>
+</head>
+<body>
+<div id="da">
+
+</div>
+</body>
+</html>
